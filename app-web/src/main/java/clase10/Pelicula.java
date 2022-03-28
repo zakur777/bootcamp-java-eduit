@@ -18,6 +18,12 @@ public class Pelicula extends Articulo {
 	public void setProductora(String productora) {
 		this.productora = productora;
 	}
+
+	@Override
+	public void detalleHijo() {
+		// TODO Auto-generated method stub
+		System.out.println("Productora: " + this.productora);
+	}
 	
 	
 

@@ -6,6 +6,10 @@ public class Libro extends Articulo {
 	
 	//atributos propios
 	private String isbn;
+	
+	public Libro() {
+		super(null, null, null, null, null);
+	}
 
 	public Libro(Long id, String nombre, String autor, Double precio, String urlImagen, String isbn) {
 		super(id, nombre, autor, precio, urlImagen);
@@ -21,10 +25,18 @@ public class Libro extends Articulo {
 		this.isbn = isbn;
 	}
 	
+	/*
 	@Override
 	public void detalle() {
 		super.detalle();
 		System.out.println("ISBN: " + this.getIsbn());
+	}
+	*/
+
+	@Override
+	public void detalleHijo() {
+		System.out.println("ISBN: " + this.getIsbn());
+		
 	}
 
 }

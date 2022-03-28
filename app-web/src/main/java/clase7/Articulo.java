@@ -1,6 +1,6 @@
 package clase7;
 
-public class Articulo {
+public abstract class Articulo {
 
 	private Long id;
 	private String nombre;
@@ -17,7 +17,7 @@ public class Articulo {
 		this.urlImagen = urlImagen;
 	}
 	
-	public void detalle() {
+	public final void detalle() {
 		System.out.println(this.getNombre());
 		System.out.println(this.getAutor());
 		//solo mostrar la img si tiene una, �como hago?
@@ -26,7 +26,11 @@ public class Articulo {
 		}else {
 			System.out.println("No tiene, muestro marca de agua");
 		}
+		
+		this.detalleHijo();
 	}
+	
+	public abstract void detalleHijo();
 	
 	//alt+shit+s
 	

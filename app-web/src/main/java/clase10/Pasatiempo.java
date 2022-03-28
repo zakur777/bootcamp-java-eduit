@@ -19,10 +19,17 @@ public class Pasatiempo extends Articulo {
 		this.marca = marca;
 	}
 
-	
+	/*
 	@Override
 	public void detalle() {
 		super.detalle();
+		System.out.println("Marca: " + this.marca);
+	}
+	*/
+
+	@Override
+	public void detalleHijo() {
+		// TODO Auto-generated method stub
 		System.out.println("Marca: " + this.marca);
 	}
 	

@@ -28,7 +28,7 @@ public class Musica extends Articulo {
 	public void agregarTema(String tema) {
 		
 	}
-	
+	/*
 	@Override
 	public void detalle() {
 		super.detalle();
@@ -36,6 +36,17 @@ public class Musica extends Articulo {
 		for (String tema : this.getListaTemas()) {
 			System.out.println(tema);
 		}
+	}
+	*/
+
+
+	@Override
+	public void detalleHijo() {
+		System.out.println("Temas:");
+		for (String tema : this.getListaTemas()) {
+			System.out.println(tema);
+		}
+		
 	}
   
 }

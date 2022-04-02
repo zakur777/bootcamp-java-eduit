@@ -1,9 +1,12 @@
 package practica4;
 
 public class Superman extends Volador implements Aterrizable {
+	
+	private int estado;
 
 	public Superman() {
 		super("Clar Kent");
+		this.estado = Volador.cont;
 	}
 
 	@Override
@@ -12,7 +15,7 @@ public class Superman extends Volador implements Aterrizable {
 		
 		EstadoAterrisaje estadoAterrisaje = new EstadoAterrisaje();
 		
-		return estadoAterrisaje.identificarEstado(Volador.cont);
+		return estadoAterrisaje.identificarEstado(this.estado);
 	}
 	
 }

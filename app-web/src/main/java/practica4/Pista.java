@@ -8,7 +8,7 @@ public class Pista {
 	public Pista(String nombre) {
 		super();
 		this.nombre = nombre;
-		this.voladores = new Volador[10];
+		this.voladores = new Volador[]{};
 	}
 
 	public String getNombre() {
@@ -20,13 +20,14 @@ public class Pista {
 	}
 	
 
-	public void asignarVoladores(Volador volador, int index) {
-		if (index >= 0 && index <= 9) {
-			this.voladores[index] = volador;			
-		} else {
-			System.out.println("Capacidad maxima excedida, solo se aceptan 10 voladores en esta pista");
+	public void agregarVoladores(Volador volador) {
+		Volador[] auxVoladores = new Volador[this.voladores.length + 1];
+		
+		for (int i = 0; i < this.voladores.length; i++) {
+			auxVoladores[i] = this.voladores[i];
 		}
-
+		auxVoladores[this.voladores.length] = volador;
+		this.voladores = auxVoladores;
 	}
 	
 	

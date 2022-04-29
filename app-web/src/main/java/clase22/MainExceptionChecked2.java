@@ -10,16 +10,17 @@ public class MainExceptionChecked2 {
 		int b = 0;
 		boolean error = true;
 		Scanner teclado = new Scanner(System.in);
+		
 		do {
 			try {
 				b = teclado.nextInt();
-			}catch (Exception e) {
+			} catch (Exception e) {
 				teclado.next();
 				continue;
-				
+
 			}
-		}while(error);
-		
+		} while (error);
+
 		try {
 			int div = Calculadora.dividir(a, b);
 			System.out.println(div);

@@ -28,27 +28,49 @@ public class CrearArticuloController {
 		System.out.println("Stock:");
 		Long stock = teclado.nextLong();
 		
-		System.out.println("Marca:");
+		System.out.println("Categoria:");
 		Long categoriaId = teclado.nextLong();
 		
 		System.out.println("Marca:");
 		Long marcasId = teclado.nextLong();
 		
-		//verificar si existen marca y categoria
-		// TODO: implementar dao y service para categoria
+		//verificar si existen marca y cateoria
+		//TPH, implementar dao y service para cateogoria
 		
 		teclado.close();
 		
 		Articulo nuevo = new Articulo(titulo, codigo, null, precio, stock, marcasId, categoriaId);
 		
-		//insertarlo en la db
+		//insertarlo en la db??
 		
-		ArticulosService articulosService = new ArticuloServiceImpl();
-		
+		ArticulosService articuloService = new ArticuloServiceImpl();
+
 		try {
-			articulosService.createArticulo(nuevo);
+			
+			//obtengo marcasId y categoriasId
+			
+			articuloService.createArticulo(nuevo);
 		} catch (ServiceException e) {
-			System.err.println(e.getMessage() + ", " + e.getCause().getMessage());
+			System.err.println(e.getMessage() + "," + e.getCause().getMessage());
+			
+			System.out.println("Existe, actualizando...");
+			//si fue duplicado
+			try {
+				Articulo artQueExisteEnlaDB = articuloService.getByCodigo(nuevo.getCodigo());
+				
+				//actualizo los datos de artQueExisteEnlaDB con los de nuevo
+				artQueExisteEnlaDB.setCategoriasId(nuevo.getCategoriasId());
+				artQueExisteEnlaDB.setMarcasId(nuevo.getMarcasId());
+				artQueExisteEnlaDB.setPrecio(nuevo.getPrecio());
+				artQueExisteEnlaDB.setCategoriasId(nuevo.getCategoriasId());
+				artQueExisteEnlaDB.setStock(artQueExisteEnlaDB.getStock() + nuevo.getStock());
+				artQueExisteEnlaDB.setTitulo(nuevo.getTitulo());
+				
+				articuloService.updateArticulo(artQueExisteEnlaDB);
+			} catch (ServiceException e1) {
+				System.err.println(e1.getMessage() + "," + e.getCause());	
+			}
+			
 		}
 	}
 

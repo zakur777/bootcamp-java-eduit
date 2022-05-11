@@ -14,6 +14,8 @@ public interface ArticulosService {
 	 * @throws ServiceException
 	 */
 	public Articulo getById(Long id) throws ServiceException;
+	
+	public Articulo getByCodigo(String codigo) throws ServiceException;
 
 	public void deleteArticulo(Long id) throws ServiceException;
 

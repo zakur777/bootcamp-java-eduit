@@ -93,6 +93,30 @@ public class ArticuloDaoMysqlImpl implements ArticuloDao {
 	}
 
 	@Override
+	public Articulo getByCode(String codigo) throws GenericException {
+		try (Connection con2 = AdministradorDeConexiones.obtenerConexion()) {
+			String sql = "SELECT * FROM ARTICULOS WHERE codigo = ?";
+
+			try (PreparedStatement st = con2.prepareStatement(sql)) {
+
+				st.setString(1, codigo);
+
+				try (ResultSet rs = st.executeQuery()) {
+					Articulo articulo = null;
+					if (rs.next()) {
+						articulo = fromResultSetToEntity(rs);
+					}
+					return articulo;
+				}
+			} catch (SQLException e) {
+				throw new GenericException("No se pudo obtener el articulo id:" + codigo, e);
+			}
+		} catch (SQLException e) {
+			throw new GenericException("No se pudo obtener el articulo id:" + codigo, e);
+		}
+	}
+
+	@Override
 	public void update(Articulo articuloToUpdate) throws GenericException {
 		StringBuffer sql = new StringBuffer("UPDATE ARTICULOS SET ");
 		if (articuloToUpdate.getTitulo() != null) {

@@ -30,6 +30,15 @@ public class ArticuloServiceImpl implements ArticulosService {
 			throw new ServiceException("Error al consutlar articulo", e);
 		}
 	}
+	
+	@Override
+	public Articulo getByCodigo(String codigo) throws ServiceException {
+		try {
+			return dao.getByCode(codigo);
+		} catch (GenericException e) {			
+			throw new ServiceException("Error al consutlar articulo",e);
+		}
+	}
 
 	@Override
 	public void deleteArticulo(Long id) throws ServiceException {

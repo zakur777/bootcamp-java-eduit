@@ -13,4 +13,7 @@ public interface ArticuloDao {
 		public Articulo getByPK(Long pk) throws GenericException;
 		public void update(Articulo ordenToUpdate) throws GenericException;
 		public void delete(Long pk) throws GenericException;
+		
+		//no forma parte del crud
+		public Articulo getByCode(String codigo) throws GenericException;
 }

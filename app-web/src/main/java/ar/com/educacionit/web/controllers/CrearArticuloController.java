@@ -37,6 +37,8 @@ public class CrearArticuloController {
 		//verificar si existen marca y categoria
 		// TODO: implementar dao y service para categoria
 		
+		teclado.close();
+		
 		Articulo nuevo = new Articulo(titulo, codigo, null, precio, stock, marcasId, categoriaId);
 		
 		//insertarlo en la db

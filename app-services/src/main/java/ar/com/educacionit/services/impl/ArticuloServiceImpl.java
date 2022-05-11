@@ -3,6 +3,7 @@ package ar.com.educacionit.services.impl;
 import java.util.List;
 
 import ar.com.educacionit.daos.ArticuloDao;
+import ar.com.educacionit.daos.db.exceptions.DuplicatedException;
 import ar.com.educacionit.daos.db.exceptions.GenericException;
 import ar.com.educacionit.daos.impl.ArticuloDaoMysqlImpl;
 import ar.com.educacionit.domain.Articulo;
@@ -56,5 +57,17 @@ public class ArticuloServiceImpl implements ArticulosService {
 			throw new ServiceException("Error consutlando articulos", e);
 		}
 	}
+
+	@Override
+	public void createArticulo(Articulo nuevo) throws ServiceException {
+		try {
+			dao.save(nuevo);
+		} catch (GenericException | DuplicatedException e) {
+			throw new ServiceException("Error creando articulos", e);
+		}
+		
+	}
+	
+	
 
 }

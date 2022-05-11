@@ -20,4 +20,6 @@ public interface ArticulosService {
 	public void updateArticulo(Articulo entity) throws ServiceException;
 
 	public List<Articulo> obtenerTodos() throws ServiceException;
+
+	public void createArticulo(Articulo nuevo) throws ServiceException;
 }

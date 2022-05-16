@@ -16,6 +16,7 @@ public class ArticulloController {
 		try {
 			// obtengo todos los articulos
 			List<Articulo> list = service.findAll();
+			System.out.println("Clase30");
 
 			if (!list.isEmpty()) {
 

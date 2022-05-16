@@ -108,7 +108,7 @@ public class Articulo {
 	public String toString() {
 		return "Articulo [id=" + id + ", titulo=" + titulo + ", codigo=" + codigo + ", fechaCreacion=" + fechaCreacion
 				+ ", precio=" + precio + ", stock=" + stock + ", marcasId=" + marcasId + ", categoriasId="
-				+ categoriasId + "]";
+				+ categoriasId + "]\n";
 	}
 	
 	

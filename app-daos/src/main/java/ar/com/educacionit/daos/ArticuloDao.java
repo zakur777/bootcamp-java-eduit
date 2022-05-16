@@ -6,8 +6,9 @@ import ar.com.educacionit.daos.db.exceptions.DuplicatedException;
 import ar.com.educacionit.daos.db.exceptions.GenericException;
 import ar.com.educacionit.domain.Articulo;
 
-public interface ArticuloDao {
+public interface ArticuloDao extends GenericDao<Articulo> {
 	//definir los metodos CRUD
+	/*
 		public List<Articulo> findAll() throws GenericException;
 		public void save(Articulo orden) throws GenericException, DuplicatedException;
 		public Articulo getByPK(Long pk) throws GenericException;
@@ -16,4 +17,7 @@ public interface ArticuloDao {
 		
 		//no forma parte del crud
 		public Articulo getByCode(String codigo) throws GenericException;
+		*/
+	
+	public Articulo getByCode(String codigo) throws GenericException;
 }

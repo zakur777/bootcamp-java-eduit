@@ -8,6 +8,8 @@ import java.sql.SQLIntegrityConstraintViolationException;
 import java.sql.Statement;
 import java.util.Date;
 
+import com.github.javafaker.Faker;
+
 import ar.com.educacionit.daos.ArticuloDao;
 import ar.com.educacionit.daos.db.AdministradorDeConexiones;
 import ar.com.educacionit.daos.db.exceptions.DuplicatedException;
@@ -52,6 +54,57 @@ public class ArticuloDaoMysqlImpl extends JDBCBaseDao<Articulo> implements Artic
 						Long id = rs.getLong(1);
 						articulo.setId(id);
 					}
+
+				}
+
+			}
+		} catch (SQLException se) {
+			if (se instanceof SQLIntegrityConstraintViolationException) {
+				throw new DuplicatedException("No se ha podido insertar el articulo, integridad de datos violada", se);
+			}
+			throw new GenericException(se.getMessage(), se);
+		} catch (GenericException ge) {
+			throw new GenericException(ge.getMessage(), ge);
+		}
+	}
+
+	public void saveBatch() throws DuplicatedException, GenericException {// ctrl+f
+
+		try (Connection con2 = AdministradorDeConexiones.obtenerConexion()) {
+			StringBuffer sql = new StringBuffer(
+					"INSERT INTO ARTICULOS (TITULO, CODIGO, PRECIO, CATEGORIAS_ID, MARCAS_ID, FECHA_CREACION, STOCK) VALUES(");
+			sql.append("?,?,?,?,?,?,?)");
+
+			try (PreparedStatement st = con2.prepareStatement(sql.toString())) {
+
+				System.out.println("Conected");
+
+				Faker fake = new Faker();
+
+				for (int i = 0; i < 101; i++) {
+
+					st.setString(1, fake.commerce().productName());
+					st.setString(2, fake.idNumber().ssnValid().substring(0, 9));
+					st.setDouble(3, fake.number().numberBetween(100, 10000));
+					st.setLong(4, fake.number().numberBetween(1, 13));
+					st.setLong(5, fake.number().numberBetween(1, 9));
+					st.setDate(6, new java.sql.Date(System.currentTimeMillis()));
+					st.setLong(7, fake.number().numberBetween(1, 30));
+
+					st.addBatch();
+				}
+
+				int[] executeBatch = st.executeBatch();
+				System.out.println("Rows impacted " + executeBatch.length);
+
+				System.out.println("records persisted");
+				PreparedStatement result = con2.prepareStatement("SELECT * FROM ARTICULOS");
+				ResultSet rs = result.executeQuery();
+
+				while (rs.next()) {
+					System.out.printf("\nid [%d] titulo [%s] codigo [%s] fecha_creacion [%s] precio [%d] stock [%d] ",
+							rs.getLong(1), rs.getString(2), rs.getString(3), rs.getDate(4), rs.getLong(5),
+							rs.getLong(6));
 
 				}
 

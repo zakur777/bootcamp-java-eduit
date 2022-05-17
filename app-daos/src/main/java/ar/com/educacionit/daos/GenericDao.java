@@ -15,5 +15,8 @@ public interface GenericDao<T> {
 	
 	//no forma parte del crud
 	//public T getByCode(String codigo) throws GenericException;
+	
+	/*puede*/
+	public List<T> findPageable(Integer currentPage, Integer size) throws GenericException;
 
 }

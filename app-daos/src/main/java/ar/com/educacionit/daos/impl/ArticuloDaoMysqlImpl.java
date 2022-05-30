@@ -4,46 +4,56 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.SQLIntegrityConstraintViolationException;
-import java.sql.Statement;
 import java.util.Date;
 
 import ar.com.educacionit.daos.ArticuloDao;
 import ar.com.educacionit.daos.db.AdministradorDeConexiones;
-import ar.com.educacionit.daos.db.exceptions.DuplicatedException;
 import ar.com.educacionit.daos.db.exceptions.GenericException;
 import ar.com.educacionit.domain.Articulo;
-import ar.com.educacionit.domain.Entity;
 
 public class ArticuloDaoMysqlImpl extends JDBCBaseDao<Articulo> implements ArticuloDao {
-
-	// private Connection con;
 
 	public ArticuloDaoMysqlImpl() {
 		super("articulos");
 	}
+	
+	@Override
+	public String getSaveSQL() {
+		return "(TITULO,CODIGO, PRECIO, CATEGORIAS_ID, MARCAS_ID,FECHA_CREACION,STOCK) VALUES (?,?,?,?,?,?,?)";
+	}
 
 	@Override
+	public void saveData(Articulo entity, PreparedStatement st) throws SQLException {
+		st.setString(1, entity.getTitulo());
+		st.setString(2, entity.getCodigo());
+		st.setDouble(3, entity.getPrecio());
+		st.setLong(4, entity.getCategoriasId());
+		st.setLong(5, entity.getMarcasId());
+		st.setDate(6, new java.sql.Date(System.currentTimeMillis()));//java.sql.Date
+		st.setLong(7, entity.getStock());
+	}
+	
+	@Override
 	public Articulo getByCode(String codigo) throws GenericException {
-		try (Connection con2 = AdministradorDeConexiones.obtenerConexion()) {
+		try(Connection con2 = AdministradorDeConexiones.obtenerConexion()) {
 			String sql = "SELECT * FROM ARTICULOS WHERE codigo = ?";
-
+			
 			try (PreparedStatement st = con2.prepareStatement(sql)) {
-
+				
 				st.setString(1, codigo);
-
-				try (ResultSet rs = st.executeQuery()) {
+				
+				try(ResultSet rs = st.executeQuery()) { 
 					Articulo articulo = null;
-					if (rs.next()) {
+					if(rs.next()) {
 						articulo = fromResultSetToEntity(rs);
 					}
 					return articulo;
 				}
 			} catch (SQLException e) {
-				throw new GenericException("No se pudo obtener el articulo id:" + codigo, e);
+				throw new GenericException("No se pudo obtener el articulo id:"+codigo, e);
 			}
 		} catch (SQLException e) {
-			throw new GenericException("No se pudo obtener el articulo id:" + codigo, e);
+			throw new GenericException("No se pudo obtener el articulo id:"+codigo, e);
 		}
 	}
 
@@ -59,32 +69,42 @@ public class ArticuloDaoMysqlImpl extends JDBCBaseDao<Articulo> implements Artic
 		return new Articulo(idArticulo, titulo, codigo, fechaCreacion, precio, stock, marcasId, categoriasId);
 	}
 
-	@Override
-	public String getSaveSQL() {
-		return "(TITULO, CODIGO, PRECIO, CATEGORIAS_ID, MARCAS_ID, FECHA_CREACION, STOCK) VALUES(?,?,?,?,?,?,?)";
-	}
 
 	@Override
-	public void saveData(Articulo entity, PreparedStatement st) throws SQLException {
-		st.setString(1, entity.getTitulo());
-		st.setString(2, entity.getCodigo());
-		st.setDouble(3, entity.getPrecio());
-		st.setLong(4, entity.getCategoriasId());
-		st.setLong(5, entity.getMarcasId());
-		st.setDate(6, new java.sql.Date(System.currentTimeMillis()));
-		st.setLong(7, entity.getStock());
+	public void updateData(Articulo entity, PreparedStatement st) throws SQLException {
+		int idx = 1;
+		if (entity.getTitulo() != null) {
+			st.setString(idx++, entity.getTitulo());
+		}
+		/*
+		if (entity.getCodigo() != null) {
+			st.setString(2, entity.getCodigo());
+		}*/
+		if (entity.getPrecio() != null) {
+			st.setDouble(idx++, entity.getPrecio());
+		}
+		if (entity.getStock() != null) {
+			st.setLong(idx++, entity.getStock());
+		}
+		if (entity.getMarcasId() != null) {
+			st.setLong(idx++, entity.getMarcasId());
+		}
+		if (entity.getCategoriasId() != null) {
+			st.setLong(idx++, entity.getCategoriasId());
+		}
+		
 	}
 
 	@Override
 	public String getUpdateSQL(Articulo entity) {
 		StringBuffer sql = new StringBuffer();
-
+		
 		if (entity.getTitulo() != null) {
 			sql.append("titulo=?").append(", ");
 		}
-		if (entity.getCodigo() != null) {
+		/*if (entity.getCodigo() != null) {
 			sql.append("codigo=?").append(", ");
-		}
+		}*/
 		if (entity.getPrecio() != null) {
 			sql.append("precio=?").append(", ");
 		}
@@ -97,31 +117,7 @@ public class ArticuloDaoMysqlImpl extends JDBCBaseDao<Articulo> implements Artic
 		if (entity.getCategoriasId() != null) {
 			sql.append("categorias_id=?").append(",");
 		}
-
+		
 		return sql.substring(0, sql.length() - 1).toString();
 	}
-
-	@Override
-	public void updateData(Articulo entity, PreparedStatement st) throws SQLException {
-		if (entity.getTitulo() != null) {
-			st.setString(1, entity.getTitulo());
-		}
-		if (entity.getCodigo() != null) {
-			st.setString(2, entity.getCodigo());
-		}
-		if (entity.getPrecio() != null) {
-			st.setDouble(3, entity.getPrecio());
-		}
-		if (entity.getStock() != null) {
-			st.setLong(4, entity.getStock());
-		}
-		if (entity.getMarcasId() != null) {
-			st.setLong(5, entity.getMarcasId());
-		}
-		if (entity.getCategoriasId() != null) {
-			st.setLong(6, entity.getCategoriasId());
-		}
-
-	}
-
 }

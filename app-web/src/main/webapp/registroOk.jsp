@@ -35,20 +35,22 @@
 							      <td> <%=fila.getTitulo() %></td>
 							      <td> <%=fila.getCodigo() %></td>
 							      <td> <%=fila.getPrecio() %></td>
-							      <td> 
+							      <td>
 							      		<!-- Button trigger modal
 										<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
 										  Eliminar
 										</button>
 										-->
+
 										<a class="btn btn-danger" role="button" href="<%=request.getContextPath()%>/controllers/EliminarArticuloServlet?id=<%=fila.getId() %>">Eliminar</a>
 							      		<a class="btn btn-primary" role="button">Editar</a>
+									  <p>Zakur</p>
 							      </td>
 							    </tr>
-						    <%} %>						   
+						    <%} %>
 						  </tbody>
 						</table>
-			        	<a href="<%=request.getContextPath()%>/">Volver</a>			         	       
+			        	<a href="<%=request.getContextPath()%>/">Volver</a>
 			     	</section>
 			     </div>
 		     </div>

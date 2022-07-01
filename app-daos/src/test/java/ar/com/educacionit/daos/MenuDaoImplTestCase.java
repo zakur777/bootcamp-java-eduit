@@ -21,7 +21,7 @@ public class MenuDaoImplTestCase {
 
 	private static List<Menu> buildMenu(List<Menu> listMenu) {
 		
-		List<Menu> menuFiltrado = new ArrayList<Menu>();
+		List<Menu> menuFiltrado = new ArrayList<>();
 		
 		for(Menu m : listMenu) {
 			if(m.isRoot()) {
@@ -44,12 +44,12 @@ public class MenuDaoImplTestCase {
 	
 	private static List<Menu> buildMenu2(List<Menu> listMenu) {
 		
-		Map<Long, Menu> mapRoot = new HashMap<Long, Menu>();
+		Map<Long, Menu> mapRoot = new HashMap<>();
 		
 		for(Menu m : listMenu) {
 			if(m.isRoot()) {
 				mapRoot.put(m.getId(),m);
-				//¿los quito de la lista?
+				//ï¿½los quito de la lista?
 			}
 		}
 		
@@ -66,7 +66,7 @@ public class MenuDaoImplTestCase {
 			}
 		}
 		
-		List<Menu> menuFiltrados = new ArrayList<Menu>();
+		List<Menu> menuFiltrados = new ArrayList<>();
 		menuFiltrados.addAll(mapRoot.values());
 		return menuFiltrados;
 	}

@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clase2 HTML</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<script>
+
+	</script>
 </head>
 <body>
     <main>
@@ -43,8 +46,10 @@
 										-->
 
 										<a class="btn btn-danger" role="button" href="<%=request.getContextPath()%>/controllers/EliminarArticuloServlet?id=<%=fila.getId() %>">Eliminar</a>
-							      		<a class="btn btn-primary" role="button">Editar</a>
-									  <p>Zakur</p>
+									  <!-- Button trigger modal -->
+									  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+										  Editar
+									  </button>
 							      </td>
 							    </tr>
 						    <%} %>

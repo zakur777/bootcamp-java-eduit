@@ -17,6 +17,8 @@ public class MenuDaoImplTestCase {
 		List<Menu> menu = new MenuDaoMySqlImpl().findAll();
 		
 		List<Menu> menu2 = buildMenu2(menu);
+
+		//System.out.println(menu2);
 	}
 
 	private static List<Menu> buildMenu(List<Menu> listMenu) {

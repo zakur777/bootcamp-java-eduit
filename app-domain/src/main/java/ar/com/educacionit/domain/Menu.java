@@ -67,7 +67,7 @@ public class Menu implements Entity{
 	//alt+shif+s
 	@Override
 	public String toString() {
-		return "Menu [id=" + id + ", texto=" + texto + ", subMenu=" + subMenu + ", isRoot=" + isRoot + "]";
+		return "\nMenu [id=" + id + ", texto=" + texto + ", subMenu=" + subMenu + ", isRoot=" + isRoot + "]";
 	}
 	
 }

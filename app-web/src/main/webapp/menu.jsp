@@ -1,6 +1,9 @@
 <%@ page import="ar.com.educacionit.domain.Menu" %>
 <%@ page import="java.util.List" %>
-<%@ page import="java.util.Collection" %><%--
+<%@ page import="java.util.Collection" %>
+<%@ page import="java.io.IOException" %>
+<%@ page import="java.io.PrintWriter" %>
+<%--
   Created by IntelliJ IDEA.
   User: zakur
   Date: 10-07-22
@@ -15,42 +18,38 @@
 </head>
 <body>
   <div class="container-fluid">
-      <%  Collection<Menu> menuList = (Collection<Menu>)request.getAttribute("menu");%>
+      <%  List<Menu> menuList = (List<Menu>)request.getAttribute("menu");%>
       <ul class="nav nav-tabs">
-          <%System.out.println(menuList);%>
-          <% for(Menu menu: menuList) {%>
-              <% if( menu.isRoot() && !menu.getSubMenu().isEmpty()) {%>
+          <%! public String renderMenu(Menu menuForSearch){
 
-              <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><%=menu.getTexto()%></a>
-                  <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Prueba 1</a></li>
-                      <li><a class="dropdown-item" href="#">Prueba 2</a></li>
-                      <li><a class="dropdown-item" href="#">Prueba 3</a></li>
-                  </ul>
-              </li>
-              <%}else if(menu.isRoot()){%>
-                  <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#"><%=menu.getTexto()%></a>
-                  </li>
-              <%}%>
+              String htmlString = "";
+              StringBuilder stringBuilder = new StringBuilder();
+
+                   if( menuForSearch.isRoot() && !menuForSearch.getSubMenu().isEmpty()) {
+
+                       stringBuilder.append("<li class=\"nav-item dropdown\">")
+                               .append("<a class=\"nav-link dropdown-toggle\" data-bs-toggle=\"dropdown\" href=\"#\" role=\"button\" aria-expanded=\"false\">"+menuForSearch.getTexto()+"</a>");
+                          if(menuForSearch.getSubMenu() != null) {
+                              stringBuilder.append("<ul class=\"dropdown-menu\">");
+                                  for (Menu menuRecursive: menuForSearch.getSubMenu()) {
+                                      stringBuilder.append("<li><a class=\"dropdown-item\" href=\"#\">"+ menuRecursive.getTexto() +"</a></li>");
+                                      renderMenu(menuRecursive);
+                                  }
+                                  stringBuilder.append("</ul>");
+
+                              }
+                               stringBuilder.append("</li>");
+                       return stringBuilder.toString();
+                  } else if (menuForSearch.isRoot()) {
+                        htmlString = "<li class=\"nav-item\"><a class=\"nav-link active\" aria-current=\"page\" href=\"#\">"+ menuForSearch.getTexto() +"</a></li>";
+                          return htmlString;
+
+                   }
+                  return "sin menu";
+          }%>
+          <% for(Menu menu: menuList) {%>
+          <%=renderMenu(menu)%>
           <%}%>
-          <%--<li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Dropdown</a>
-              <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Separated link</a></li>
-              </ul>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li>--%>
       </ul>
   </div>
 

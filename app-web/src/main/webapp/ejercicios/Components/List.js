@@ -17,7 +17,7 @@ function agregarItem(){
 	
 	if(!valorDelInput) {
 		return;	
-	}doc
+	}
 	//JSON
 	let tareas = getTareas();
 	

@@ -3,13 +3,13 @@ package ar.com.educacionit.web.controllers.console;
 import ar.com.educacionit.domain.Articulo;
 import ar.com.educacionit.services.ArticulosService;
 import ar.com.educacionit.services.exceptions.ServiceException;
-import ar.com.educacionit.services.impl.ArticulosServiceImpl;
+import ar.com.educacionit.services.impl.ArticuloServiceImpl;
 
 public class UpdateArticuloController {
 
 	public static void main(String[] args) throws ServiceException {
 		
-		ArticulosService articuloService = new ArticulosServiceImpl();
+		ArticulosService articuloService = new ArticuloServiceImpl();
 
 		Articulo art = articuloService.getByCodigo("med001");
 		

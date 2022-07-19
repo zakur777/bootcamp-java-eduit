@@ -23,7 +23,7 @@ public class ReflectionApiMain {
 	}
 
 	private static void mostrarAtributos(Object obj) throws IllegalAccessException {
-		//¿CÓMO SE QUE ATRIBUTOS TIENE?
+		//COMO SE QUE ATRIBUTOS TIENE?
 		Field[] atrs = obj.getClass().getDeclaredFields();
 		
 		for(Field f : atrs) {

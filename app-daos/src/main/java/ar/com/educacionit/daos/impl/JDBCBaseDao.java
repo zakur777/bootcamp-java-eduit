@@ -86,7 +86,7 @@ public abstract class JDBCBaseDao<T extends Entity> implements GenericDao<T>{
 		try(Connection con2 = AdministradorDeConexiones.obtenerConexion()) {
 			
 			StringBuffer sql = new StringBuffer("INSERT INTO ").append(this.tabla).append(this.getSaveSQL());
-			StringBuffer sql2 = new StringBuffer("INSERT INTO ").append(this.tabla).append(this.getSaveSQL2(entity));
+			//StringBuffer sql2 = new StringBuffer("INSERT INTO ").append(this.tabla).append(this.getSaveSQL2(entity));
 			
 			try(PreparedStatement st = con2.prepareStatement(sql.toString(),PreparedStatement.RETURN_GENERATED_KEYS)) {
 				
@@ -132,7 +132,7 @@ public abstract class JDBCBaseDao<T extends Entity> implements GenericDao<T>{
 			sb.deleteCharAt(sb.length() - 1); // borra la ultima ","
 			sb.append(") VALUES (");
 			// agrego los "?" correspondiente a la cantidad de campos
-			for (int i = 1; i < campos.length; i++) { // comienza despues del 1� elemento ID
+			for (int i = 1; i < campos.length; i++) { // comienza despues del 10 elemento ID
 				sb.append("?,");
 			}
 			sb.deleteCharAt(sb.length() - 1); // borra la ultima ","

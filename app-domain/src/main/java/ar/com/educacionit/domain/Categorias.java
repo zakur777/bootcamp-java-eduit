@@ -1,12 +1,12 @@
 package ar.com.educacionit.domain;
 
-public class Categorias implements Entity {
+public class Categorias implements Entity{
+
 	private Long id;
 	private String descripcion;
 	private Long habilitada;
 	
 	public Categorias(Long id, String descripcion, Long habilitada) {
-		super();
 		this.id = id;
 		this.descripcion = descripcion;
 		this.habilitada = habilitada;
@@ -44,11 +44,7 @@ public class Categorias implements Entity {
 
 	@Override
 	public String toString() {
-		return "Categorias [id=" + id + ", descripcion=" + descripcion + ", habilitada=" + habilitada + "]\n";
+		return "Categorias [id=" + id + ", descripcion=" + descripcion + ", habilitada=" + habilitada + "]";
 	}
 	
-	
-	
-	
-
 }

@@ -1,18 +1,18 @@
 package ar.com.educacionit.web.controllers.console;
 
-import java.util.List;
-import java.util.Scanner;
-
 import ar.com.educacionit.domain.Articulo;
 import ar.com.educacionit.services.ArticulosService;
 import ar.com.educacionit.services.exceptions.ServiceException;
-import ar.com.educacionit.services.impl.ArticulosServiceImpl;
+import ar.com.educacionit.services.impl.ArticuloServiceImpl;
+
+import java.util.List;
+import java.util.Scanner;
 
 public class DeleteArticuloController {
 
 	public static void main(String[] args) throws ServiceException {
 		
-		ArticulosService service = new ArticulosServiceImpl();
+		ArticulosService service = new ArticuloServiceImpl();
 		
 		System.out.println("Articulos existentes:");
 		List<Articulo> list = service.findAll();

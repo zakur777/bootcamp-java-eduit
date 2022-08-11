@@ -17,13 +17,11 @@ public class MenuDaoImplTestCase {
 		List<Menu> menu = new MenuDaoMySqlImpl().findAll();
 		
 		List<Menu> menu2 = buildMenu2(menu);
-
-		//System.out.println(menu2);
 	}
 
 	private static List<Menu> buildMenu(List<Menu> listMenu) {
 		
-		List<Menu> menuFiltrado = new ArrayList<>();
+		List<Menu> menuFiltrado = new ArrayList<Menu>();
 		
 		for(Menu m : listMenu) {
 			if(m.isRoot()) {
@@ -46,12 +44,12 @@ public class MenuDaoImplTestCase {
 	
 	private static List<Menu> buildMenu2(List<Menu> listMenu) {
 		
-		Map<Long, Menu> mapRoot = new HashMap<>();
+		Map<Long, Menu> mapRoot = new HashMap<Long, Menu>();
 		
 		for(Menu m : listMenu) {
 			if(m.isRoot()) {
 				mapRoot.put(m.getId(),m);
-				//�los quito de la lista?
+				//﾿los quito de la lista?
 			}
 		}
 		
@@ -68,7 +66,7 @@ public class MenuDaoImplTestCase {
 			}
 		}
 		
-		List<Menu> menuFiltrados = new ArrayList<>();
+		List<Menu> menuFiltrados = new ArrayList<Menu>();
 		menuFiltrados.addAll(mapRoot.values());
 		return menuFiltrados;
 	}

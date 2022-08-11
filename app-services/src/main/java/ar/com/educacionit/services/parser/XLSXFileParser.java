@@ -17,9 +17,9 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import ar.com.educacionit.services.exceptions.ParseException;
 
-public class XLSFileParse extends BaseFile implements IParser<Collection<Producto>> {
+public class XLSXFileParser extends BaseFile implements IParser<Collection<Producto>> {
 
-	public XLSFileParse(String filePath) {
+	public XLSXFileParser(String filePath) {
 		super(filePath);
 	}
 
@@ -52,7 +52,7 @@ public class XLSFileParse extends BaseFile implements IParser<Collection<Product
 				row = itRows.next();
 				
 				Iterator<Cell> itCells = row.cellIterator();
-				//extraer el valor de la celda
+				
 				while(itCells.hasNext()) {
 					Producto p = productoFromCell(itCells);
 					list.add(p);
@@ -93,6 +93,5 @@ public class XLSFileParse extends BaseFile implements IParser<Collection<Product
 		
 		return p;
 	}
-
 
 }

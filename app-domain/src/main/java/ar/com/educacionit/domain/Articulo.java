@@ -2,7 +2,7 @@ package ar.com.educacionit.domain;
 
 import java.util.Date;
 
-public class Articulo implements Entity {
+public class Articulo implements Entity{
 
 	private Long id;
 	private String titulo;
@@ -12,8 +12,8 @@ public class Articulo implements Entity {
 	private Long stock;
 	private Long marcasId;
 	private Long categoriasId;
-
-	// constructor sin id para el insert en la base de datos
+	
+	//constructor sin id > insert
 	public Articulo(String titulo, String codigo, Date fechaCreacion, Double precio, Long stock, Long marcasId,
 			Long categoriasId) {
 		super();
@@ -25,8 +25,9 @@ public class Articulo implements Entity {
 		this.marcasId = marcasId;
 		this.categoriasId = categoriasId;
 	}
+	
+	//constructor con id: cuando obtenga el dato de la db
 
-	// constructor con id
 	public Articulo(Long id, String titulo, String codigo, Date fechaCreacion, Double precio, Long stock, Long marcasId,
 			Long categoriasId) {
 		super();
@@ -43,63 +44,49 @@ public class Articulo implements Entity {
 	public Long getId() {
 		return id;
 	}
-
+	
 	public void setId(Long id) {
 		this.id = id;
 	}
-
 	public String getTitulo() {
 		return titulo;
 	}
-
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
-
 	public String getCodigo() {
 		return codigo;
 	}
-
 	public void setCodigo(String codigo) {
 		this.codigo = codigo;
 	}
-
 	public Date getFechaCreacion() {
 		return fechaCreacion;
 	}
-
 	public void setFechaCreacion(Date fechaCreacion) {
 		this.fechaCreacion = fechaCreacion;
 	}
-
 	public Double getPrecio() {
 		return precio;
 	}
-
 	public void setPrecio(Double precio) {
 		this.precio = precio;
 	}
-
 	public Long getStock() {
 		return stock;
 	}
-
 	public void setStock(Long stock) {
 		this.stock = stock;
 	}
-
 	public Long getMarcasId() {
 		return marcasId;
 	}
-
 	public void setMarcasId(Long marcasId) {
 		this.marcasId = marcasId;
 	}
-
 	public Long getCategoriasId() {
 		return categoriasId;
 	}
-
 	public void setCategoriasId(Long categoriasId) {
 		this.categoriasId = categoriasId;
 	}
@@ -108,9 +95,8 @@ public class Articulo implements Entity {
 	public String toString() {
 		return "Articulo [id=" + id + ", titulo=" + titulo + ", codigo=" + codigo + ", fechaCreacion=" + fechaCreacion
 				+ ", precio=" + precio + ", stock=" + stock + ", marcasId=" + marcasId + ", categoriasId="
-				+ categoriasId + "]\n";
+				+ categoriasId + "]";
 	}
 	
 	
-
 }

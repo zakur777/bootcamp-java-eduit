@@ -6,5 +6,6 @@
     <version>1.0.0-SNAPSHOT</version>
   </parent>
   <artifactId>app-domain</artifactId>
-  <description>modulo de dominio de la app</description>
+  <name>
+modulo de dominio de la app</name>
 </project>

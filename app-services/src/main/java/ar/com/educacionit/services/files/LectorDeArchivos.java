@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import ar.com.educacionit.domain.Socio;
+import ar.com.educacionit.domain.Socios;
 import ar.com.educacionit.services.SociosService;
 import ar.com.educacionit.services.exceptions.ServiceException;
 import ar.com.educacionit.services.impl.SociosServiceImpl;
@@ -15,22 +15,22 @@ import ar.com.educacionit.services.impl.SociosServiceImpl;
 public class LectorDeArchivos {
 
 	public static void main(String[] args) throws IOException {
-
+		
 		String path = "c:/desarrollo/educationit/clase37/clase37.txt";
-
+		
 		File file = new File(path);
+		
+		if(file.exists()) {			
 
-		if (file.exists()) {
-
-			// leer el archivo
-			List<Socio> socios = leerArchivo(file);
-
-			if (!socios.isEmpty()) {
-				// grabo los datos!!
-
+			//leer el archivo
+			List<Socios> socios = leerArchivo(file);
+			
+			if(!socios.isEmpty()) {
+				//grabo los datos!!
+				
 				SociosService ss = new SociosServiceImpl();
-
-				for (Socio s : socios) {
+				
+				for(Socios s : socios) {
 					try {
 						ss.create(s);
 					} catch (ServiceException e) {
@@ -42,37 +42,37 @@ public class LectorDeArchivos {
 
 	}
 
-	private static List<Socio> leerArchivo(File file) throws IOException {
-
+	private static List<Socios> leerArchivo(File file) throws IOException {
+		
 		FileReader fr = new FileReader(file);
-
+	
 		BufferedReader br = new BufferedReader(fr);
-
+		
 		String linea = null;
-
-		// leo la primer linea y la descarto porque representa las columnas
+		
+		//leo la primer linea y la descarto porque representa las columnas
 		linea = br.readLine();
-
-		List<Socio> sociosList = new ArrayList<>();
-
-		while ((linea = br.readLine()) != null) {
-			Socio socio = sociosFromString(linea);
+		
+		List<Socios> sociosList = new ArrayList<>();
+		
+		while((linea = br.readLine()) != null) {
+			Socios socio = sociosFromString(linea);
 			sociosList.add(socio);
 		}
-
+		
 		br.close();
-
+		
 		return sociosList;
 	}
 
-	private static Socio sociosFromString(String linea) {
-		// narbona;brenda;25
+	private static Socios sociosFromString(String linea) {
+		//narbona;brenda;25
 		String[] datos = linea.split(";");
 		String apellido = datos[0];
 		String nombre = datos[1];
 		String codigo = datos[2];
-
-		return new Socio(apellido, nombre, codigo);
+		
+		return new Socios(apellido,nombre,codigo);
 	}
 
 }

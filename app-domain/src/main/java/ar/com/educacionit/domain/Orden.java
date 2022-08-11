@@ -1,12 +1,12 @@
 package ar.com.educacionit.domain;
 
 public class Orden {
+
 	private Long id;
 	private String descripcion;
 	private Float monto;
 	
 	public Orden(Long id, String descripcion, Float monto) {
-		super();
 		this.id = id;
 		this.descripcion = descripcion;
 		this.monto = monto;
@@ -41,8 +41,4 @@ public class Orden {
 		return "Orden [id=" + id + ", descripcion=" + descripcion + ", monto=" + monto + "]";
 	}
 	
-	
-	
-	
-
 }

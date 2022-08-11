@@ -1,19 +1,18 @@
 package clase17;
 
-import java.util.Collection;
+import java.util.ArrayList;
+import java.util.List;
 
-public class Carrito implements IDatos<String> {
+public class Carrito {
 
-	@Override
-	public String buscar() {
-		// TODO Auto-generated method stub
-		return null;
+	//items
+	private List<String> items;
+
+	public Carrito() {
+		items = new ArrayList<String>();
 	}
 
-	@Override
-	public Collection<String> buscarTodos() {
-		// TODO Auto-generated method stub
-		return null;
+	public void agregar(String item) {
+		items.add(item);
 	}
-
 }

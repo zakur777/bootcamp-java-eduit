@@ -11,7 +11,7 @@ public class RepasoOOP {
 		//instanciar un objeto de esa clase: objeto vivo
 		Animal perro = new Animal("verde"); //invocar el contructor de la clase Animal
 		
-		//ejecutar un método de ese objeto: acción/comportamiento del objeto vivo
+		//ejecutar un metodo de ese objeto: accion/comportamiento del objeto vivo
 		perro.hablar();
 
 		System.out.println(perro.getColor());

@@ -12,7 +12,7 @@ public class Buscador {
 	private Integer cantidad;
 	
 	//constructor
-	Buscador() {
+	public Buscador() {
 		claveBusqueda = "";
 		articulos = new Articulo[0];//vector vacio
 		cantidad = 0;
@@ -33,7 +33,7 @@ public class Buscador {
 		// Perdir a un servicio los datos (claveBusqueda)
 		//harcode los resultados
 		Articulo[] resultados = new Articulo[3];
-		resultados[0] = new Libro(1l,"BATMAN (1970) UN CABALLE...","DC COMICS",1540.9d,"https://www.tematika.com/media/catalog/Ilhsa/Imagenes/689621.jpg", "123456789");
+		resultados[0] = new Libro(1l,"BATMAN (1970) UN CABALLE...","DC COMICS",1540.9d,"https://www.tematika.com/media/catalog/Ilhsa/Imagenes/689621.jpg", "1234567890");
 		
 		String[] temas = {"tema1", "tema2"};
 		resultados[1] = new Musica(2l,"BATMAN (2010) UNA NUEVA LEYENDA", "DC COMICS",1490.9D,"https://www.tematika.com/media/catalog/Ilhsa/Imagenes/689626.jpg", temas);
@@ -53,14 +53,14 @@ public class Buscador {
 	}
 	
 	public void detalle() {
-		//�como recorro los resultados?
+		//﾿como recorro los resultados?
 		for(int i=0;i<this.cantidad;i++){
 			//me quedo con el articulo en la posicion i
 			
 			Articulo unArticulo = this.articulos[i];
 			
-			unArticulo.detalle();
-			System.out.println("-----------");
+			unArticulo.detalle();//f5
+			System.out.println("---------");
 		}
 	}
 
@@ -77,7 +77,6 @@ public class Buscador {
 	}
 
 	public Articulo[] getResultados() {
-		// TODO Auto-generated method stub
 		return this.articulos;
 	}
 }

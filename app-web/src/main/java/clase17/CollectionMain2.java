@@ -7,8 +7,6 @@ import java.util.Iterator;
 public class CollectionMain2 {
 
 	public static void main(String[] args) {
-		
-		
 		//Java Collection Framework
 				// Collection<E> cualquier cosa
 				//  List<T>: Admite elemento duplicados

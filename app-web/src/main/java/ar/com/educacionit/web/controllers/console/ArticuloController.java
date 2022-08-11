@@ -5,14 +5,14 @@ import java.util.List;
 import ar.com.educacionit.domain.Articulo;
 import ar.com.educacionit.services.ArticulosService;
 import ar.com.educacionit.services.exceptions.ServiceException;
-import ar.com.educacionit.services.impl.ArticuloServiceImpl;
+import ar.com.educacionit.services.impl.ArticulosServiceImpl;
 
 public class ArticuloController {
 
 	public static void main(String[] args) {
 		
 		//necesito el service
-		ArticulosService service = new ArticuloServiceImpl();
+		ArticulosService service = new ArticulosServiceImpl();
 		
 		try {
 			//obtengo todos los articulos

@@ -22,7 +22,7 @@ public class TorreMain {
 					System.out.println(v.getNombre() + ":" + estado.getMsj() + " enviando ayuda...");
 				}
 			}else {
-				System.out.println("No puede aterrizar acá...");
+				System.out.println("No puede aterrizar aca...");
 			}
 		}
 		

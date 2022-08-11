@@ -6,24 +6,22 @@ import ar.com.educacionit.daos.db.exceptions.ConnectionException;
 import ar.com.educacionit.domain.Orden;
 
 public class OrdenDaoImpl implements OrdenDao {
-	
+
 	private ConexionDB con;
 	
 	public OrdenDaoImpl() {
 		this.con = new ConexionDB("root", "1234");
 	}
-
+	
 	@Override
 	public Orden create(Orden orden) {
 		
+		//necesito la conexion abierta!
 		try(ConexionDB con = this.con.open()) {
-			
-			orden.setId(1L);
-			
-		} catch (ConnectionException e) {
-			// TODO: handle exception
+			orden.setId(1L);	
+		}catch(ConnectionException ce) {
+			//LOGUEAR EL ERRROR		
 		}
-		
 		return orden;
 	}
 

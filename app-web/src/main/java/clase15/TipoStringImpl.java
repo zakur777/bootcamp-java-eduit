@@ -1,6 +1,6 @@
 package clase15;
 
-public class TipoString implements IGeneric<String> {
+public class TipoStringImpl implements IGeneric<String> {
 
 	@Override
 	public String parse() {

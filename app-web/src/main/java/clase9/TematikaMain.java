@@ -9,6 +9,7 @@ public class TematikaMain {
 
 	public static void main(String[] args) {
 
+		
 		Scanner teclado = new Scanner(System.in);
 
 		int continuar;
@@ -31,7 +32,7 @@ public class TematikaMain {
 				miBuscador.detalle();
 			}
 
-			System.out.println("�Desea continuar?");
+			System.out.println("﾿Desea continuar?");
 			System.out.println("1=SI / 0=NO");
 			continuar = teclado.nextInt();
 		} while (continuar == 1);

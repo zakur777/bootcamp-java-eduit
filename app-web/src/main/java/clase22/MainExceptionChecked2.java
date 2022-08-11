@@ -10,14 +10,14 @@ public class MainExceptionChecked2 {
 		int b = 0;
 		boolean error = true;
 		Scanner teclado = new Scanner(System.in);
-		
 		do {
+			System.out.println("Ingrese b");
 			try {
 				b = teclado.nextInt();
+				error = false;
 			} catch (Exception e) {
 				teclado.next();
 				continue;
-
 			}
 		} while (error);
 
@@ -25,9 +25,9 @@ public class MainExceptionChecked2 {
 			int div = Calculadora.dividir(a, b);
 			System.out.println(div);
 		} catch (DivisionException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
+			System.out.println("finally");
 			teclado.close();
 		}
 	}

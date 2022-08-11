@@ -2,14 +2,10 @@ package clase15.generic;
 
 public abstract class Service<T> {
 	
-	protected IGenericOperation<T> iTabla;
+	protected IGenericOperaration<T> iTabla;
 
-	public Service(IGenericOperation<T> iTabla) {
-		this.iTabla = iTabla;
+	public Service(IGenericOperaration<T> itabla) {
+		this.iTabla = itabla;
 	}
 	
-	
-	
-	
-
 }

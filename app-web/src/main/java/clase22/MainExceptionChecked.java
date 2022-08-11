@@ -2,17 +2,11 @@ package clase22;
 
 public class MainExceptionChecked {
 
-	public static void main(String[] args) {
-		
-		try {
+	public static void main(String[] args) throws Exception {
 			
 			saludar(null);
-		} catch (Exception e) {
-			//e.getStackTrace();
-			String errorMsj = e.getMessage();
-			System.out.println(errorMsj);
-		}
 		
+		System.out.println("Continuamos la logica....");
 	}
 
 	static void saludar(String saludo) throws Exception{

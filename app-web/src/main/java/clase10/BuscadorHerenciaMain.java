@@ -7,21 +7,21 @@ public class BuscadorHerenciaMain {
 
 	public static void main(String[] args) {
 		
-		Buscador miBuscador = new Buscador("ironman");
-
-		miBuscador.buscar();// F3
+		Buscador miBuscador = new Buscador("iron man");
+		
+		miBuscador.buscar();
 
 		miBuscador.mostrarCantidadResultados();
-
-
-		Articulo[] resultadosArticulos = miBuscador.getResultados();
 		
-		for (Articulo aux : resultadosArticulos) {
+		Articulo[] resultados = miBuscador.getResultados();
+
+		for(Articulo aux: resultados) {
 			aux.detalle();
 			if(aux instanceof Libro) {
-				Libro l = (Libro)aux;
+				//lo que sea con el libro
+				Libro l = (Libro)aux; 
 				l.getIsbn();
-			}else if (aux instanceof Musica) {
+			}else if(aux instanceof Musica) {
 				Musica m = (Musica)aux;
 				m.getListaTemas();
 			} else {
@@ -29,7 +29,6 @@ public class BuscadorHerenciaMain {
 				p.getMarca();
 			}
 		}
-
 	}
 
 }

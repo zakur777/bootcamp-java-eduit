@@ -1,24 +1,20 @@
 package clase15.generic;
 
-public class TablaYImpl implements IGenericOperation<TablaY> {
+public class TablaYImpl implements IGenericOperaration<TablaY> {
 
 	@Override
 	public TablaY crear() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void eliminar() {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public TablaY buscarPorId(Long id) {
-		// TODO Auto-generated method stub
 		return null;
 	}
-
 
 }

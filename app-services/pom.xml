@@ -6,17 +6,26 @@
     <version>1.0.0-SNAPSHOT</version>
   </parent>
   <artifactId>app-services</artifactId>
-    <properties>
-  	<junit.jupiter.version>5.5.2</junit.jupiter.version>
-	<junit.platform.version>1.5.2</junit.platform.version>
-  </properties>
-  <dependencies>
+    <name>modulo de servicios</name>
+  	    
+<dependencies>
   	<dependency>
   		<groupId>ar.com.educacionit</groupId>
   		<artifactId>app-daos</artifactId>
   		<version>1.0.0-SNAPSHOT</version>
-  	</dependency>
-	<dependency>
+  	<!-- 
+  		<exclusions>
+  			<exclusion>
+  				<groupId>mysql</groupId>
+	    		<artifactId>mysql-connector-java</artifactId>
+  			</exclusion>
+  		</exclusions>
+  		-->
+  	
+</dependency>
+	<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+	
+<dependency>
 		<groupId>org.junit.jupiter</groupId>
 		<artifactId>junit-jupiter-engine</artifactId>
 		<version>${junit.jupiter.version}</version>
@@ -28,11 +37,15 @@
 		<version>${junit.platform.version}</version>
 		<scope>test</scope>
 	</dependency>
-	<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+			
+<!-- apache poi -->
+	<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
 	<dependency>
 	    <groupId>org.apache.poi</groupId>
 	    <artifactId>poi-ooxml</artifactId>
 	    <version>5.2.2</version>
 	</dependency>
-  </dependencies>
+    
+  
+</dependencies>
 </project>

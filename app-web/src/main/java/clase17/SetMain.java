@@ -6,20 +6,17 @@ import java.util.Set;
 public class SetMain {
 
 	public static void main(String[] args) {
+		Set<Carrito> carritosSet = new HashSet<Carrito>();
 		
-		Set<Carrito2> carritoSet = new HashSet<>();
+		Carrito c = new Carrito();
+		carritosSet.add(c);
 		
-		Carrito2 carrito = new Carrito2();
-		carritoSet.add(carrito);
+		Carrito c2 = new Carrito();
+		carritosSet.add(c2);
 		
-		Carrito2 carrito2 = new Carrito2();
-		carritoSet.add(carrito2);
-		
-		System.out.println(carrito.equals(carrito2));
-		
-		System.out.println(carritoSet.contains(carrito));
-		System.out.println(carritoSet.contains(carrito2));
+		System.out.println(c.equals(c2));
 
+		System.out.println(carritosSet.contains(c));
+		System.out.println(carritosSet.contains(c2));
 	}
-
 }

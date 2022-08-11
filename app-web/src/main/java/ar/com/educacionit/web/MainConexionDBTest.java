@@ -7,12 +7,13 @@ import ar.com.educacionit.domain.Orden;
 public class MainConexionDBTest {
 
 	public static void main(String[] args) {
+		
+		//dao > impl
 		OrdenDao dao = new OrdenDaoImpl();
 		
-		Orden orden = new Orden(1L, "test", 150f);
+		//crear la orden
+		Orden o = new Orden(1l,"test",150f);
 		
-		dao.create(orden);
-
+		dao.create(o);
 	}
-
 }

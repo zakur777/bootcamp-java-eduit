@@ -3,9 +3,9 @@ package clase10;
 import clase7.Articulo;
 
 public class Pasatiempo extends Articulo {
-	
-	private String marca;
 
+	private String marca;
+	
 	public Pasatiempo(Long id, String nombre, String autor, Double precio, String urlImagen, String marca) {
 		super(id, nombre, autor, precio, urlImagen);
 		this.marca = marca;
@@ -18,20 +18,16 @@ public class Pasatiempo extends Articulo {
 	public void setMarca(String marca) {
 		this.marca = marca;
 	}
-
 	/*
 	@Override
 	public void detalle() {
 		super.detalle();
-		System.out.println("Marca: " + this.marca);
+		System.out.println("Marca:" + this.marca);
 	}
 	*/
 
 	@Override
 	public void detalleHijo() {
-		// TODO Auto-generated method stub
-		System.out.println("Marca: " + this.marca);
+		System.out.println("Marca:" + this.marca);
 	}
-	
-
 }

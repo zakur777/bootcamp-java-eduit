@@ -35,7 +35,7 @@ public class Carrito {
 	}
 	
 	public Double obtenerPrecio() {
-		//�como calculo?
+		//﾿como calculo?
 		//return this.items.cantidad * this.items.articulos.precio;
 		Double precioFinal = 0d;
 		

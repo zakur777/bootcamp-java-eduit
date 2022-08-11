@@ -1,17 +1,18 @@
 package clase17;
 
+import java.io.Serializable;
 import java.util.Collection;
 
-public class Libro implements IDatos<Carrito> {
+public class Libro implements IDatos<Serializable>{
 
 	@Override
-	public Carrito buscar() {
+	public Serializable buscarPorId() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Collection<Carrito> buscarTodos() {
+	public Collection<Serializable> buscarTodos() {
 		// TODO Auto-generated method stub
 		return null;
 	}

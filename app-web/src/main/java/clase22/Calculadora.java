@@ -10,7 +10,8 @@ public class Calculadora {
 		return a / b;
 	}
 
-	public static double calcular(int a, int b, String op) throws OperationBaseException, InvalidaOperation {
+	public static double calcular(int a, int b, String op) 
+			throws OperationBaseException, InvalidaOperation {
 
 		if ("div".equals(op)) {
 			if (b == 0) {
@@ -29,5 +30,4 @@ public class Calculadora {
 			throw new InvalidaOperation();
 		}
 	}
-
 }

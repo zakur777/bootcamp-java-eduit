@@ -13,28 +13,28 @@ public class AdministradorDeConexiones {
 		String host = "localhost";
 		String user = "root";
 		String password ="34Admin12";
-		//String port = ""; //tomamos el puerto por defecto
 		String dbName = "bootcam-java-educacionit";
-		
-		
 		String driverName = "com.mysql.cj.jdbc.Driver";
 		String url = "jdbc:mysql://"+host+"/"+dbName+"?serverTimeZone=UTC&userSSL=false";
 		
-		//creación de la clase que perteneces al jar mysql-connection
+		//crecion de la clase que pertenece al "jar" mysql-connector
 		//no puedo hacer un new Driver, cargar dinamicamente una clase
-		//usando
+		//usando:
+		
 		try {
 			Class.forName(driverName);
 			
 			Connection connection = DriverManager.getConnection(url, user, password);
 			
 			return connection;
-		} catch (SQLException sqe) {
-			throw new GenericException("no se ha podido conectar a: " + url, sqe);
-		} catch (ClassNotFoundException cnfe) {
-			throw new GenericException("No se ha encontrado el driver: " + driverName, cnfe);
+		}catch (SQLException sqe) {
+			throw new GenericException("No se ha podido conectar a: " + url, sqe);
+		}catch(ClassNotFoundException cnfe) {
+			throw new GenericException("No se ha encontrado el driver:" + driverName,cnfe);
+		}
 		}
 		
+	public static void main(String[] args) throws GenericException {
+		obtenerConexion();
 	}
-
 }

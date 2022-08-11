@@ -9,12 +9,11 @@ import ar.com.educacionit.services.impl.CategoriasServiceImpl;
 public class CategoriaServiceImplTestCase {
 
 	public static void main(String[] args) throws ServiceException {
+		
 		CategoriasService service = new CategoriasServiceImpl();
-
+		
 		List<Categorias> list = service.findAll();
-
+		
 		System.out.println(list.size() > 0);
-
 	}
-
 }

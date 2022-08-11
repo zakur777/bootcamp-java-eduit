@@ -18,18 +18,21 @@ public abstract class Articulo {
 	}
 	
 	public final void detalle() {
+		//el padre siempre hace lo suyo
 		System.out.println(this.getNombre());
 		System.out.println(this.getAutor());
-		//solo mostrar la img si tiene una, �como hago?
+		//solo mostrar la img si tiene una, ﾿como hago?
 		if(this.tieneImagen()) {//f5
 			System.out.println(this.getUrlImagen());
 		}else {
 			System.out.println("No tiene, muestro marca de agua");
 		}
 		
+		//ahora el hijo hace su parte
 		this.detalleHijo();
 	}
 	
+	//si una clase tiene al menos un metodo abstracto, se debe declarar como abstracta.
 	public abstract void detalleHijo();
 	
 	//alt+shit+s
@@ -45,8 +48,8 @@ public abstract class Articulo {
 	 */
 	public Long getId() {
 		Long id = this.id;
-		if(this.id == null) {
-			id = -1L;
+		if(id == null) {
+			id = -1l;
 		}
 		return id;
 	}
@@ -87,15 +90,14 @@ public abstract class Articulo {
 		if (id > 0) {
 			this.id = id;
 		} else {
-			System.out.println("No se puede asignar valores negativos");
+			System.err.println("No se puede asignar valores negativos");
 		}
-		
 	}
-	
-	
-	
 	
 	/*void agregarAlCarrito(Carrito carrito) {
 		//logica de agregarlo al carrito
 	}*/
+	
+	//alt+shift+s
+	
 }

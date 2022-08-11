@@ -2,13 +2,15 @@ package clase17;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.Iterator;
-import java.util.LinkedList;
+import java.util.List;
 
 public class CollectionMain4 {
 
 	public static void main(String[] args) {
+		/*
+		 * Los elementos eliminados de la collection deben ir a otra lista.
+		 */
 
 		Collection<String> nombres = new ArrayList<>();
 
@@ -17,12 +19,25 @@ public class CollectionMain4 {
 		nombres.add("walter");
 		nombres.add("nicolas");
 		
-		nombres = new LinkedList<>();
+		//eliminar de manera segura
+		//1- me "conecto" a la collection por medio del metodo .iterator()
+		Iterator<String> itNombres = nombres.iterator();
+		List<String> eliminados = new ArrayList<>();
+		while(itNombres.hasNext()) {
+			String nombreActual = itNombres.next();
+			System.out.println("eliminando:" + nombreActual);
+			eliminados.add(nombreActual);
+			itNombres.remove();
+		}
 		
-		nombres = new HashSet<>();
+		itNombres = eliminados.iterator();
 		
-		nombres = new LinkedList<>();
+		while(itNombres.hasNext()) {
+			System.out.println(itNombres.next());
+		}
 
+		//determina si esta vacia la collection
+		boolean vacio = nombres.isEmpty();
 	}
 
 }

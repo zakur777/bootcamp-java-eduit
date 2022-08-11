@@ -4,54 +4,51 @@ public class MinimoMain {
 
 	public static void main(String[] args) {
 		
-		/*
-		 * Buscar el minimo dentro del array
-		 * y el maximo
+		/**
+		 * Buscar el numero minimo dentro del array
+		 * el maximo e indicar sus posiciones
 		 */
+		int[] edades = {36,34,38,31,28,17, 17, 16}; //1 > 0
 		
-		int[] edades = {36, 31, 38, 34, 29, 35, 17};
-		
-		/*
-		 * if
-		 * variable
-		 * for
-		 */
-		
+		//variable minimo
+		//for
+		//if		
 		if (edades.length > 0) {
-			
+			//calcular el minimo
+			//scope de la variable es "este if"
 			int minimo = edades[0];
 			int posMinimo = 0;
-			int cantidadMinimos = 0;
-			
+			int cantMinimos = 0;//contar cuantos minimos hay
 			
 			int maximo = edades[0];
 			int posMaximo = 0;
-			int cantidadMaximos = 0;
+			int cantMaximos = 0;
 			
 			for (int i = 1; i < edades.length; i++) {
-			
+				//calculo del minimo
 				if (edades[i] < minimo) {
+					//si la logica del if verdadero tiene solo una linea 
 					minimo = edades[i];
 					posMinimo = i;
-					cantidadMinimos++;
+					cantMinimos++;
 				}
 				
-				if (edades[i] > maximo) {
+				//calculo del maximo
+				if(edades[i] >= maximo) {
+					//si la logica del if verdadero tiene solo una linea 
 					maximo = edades[i];
 					posMaximo = i;
-					cantidadMaximos++;
+					cantMaximos++;
 				}
 			}
-			
-			System.out.println("El minimo es: " + minimo + " y esta en " + posMinimo + " y hay " + cantidadMinimos);
-			System.out.println("El maximo es: " + maximo + " y esta en " + posMaximo + " y hay " + cantidadMaximos);
-			
+			System.out.println("El minimo es: " + minimo + " y esta en " + posMinimo + " y hay: "+ cantMinimos);
+			System.out.println("El maximo es: " + maximo + " y esta en " + posMaximo + " y hay: " + cantMaximos);
 		} else {
 			System.out.println("No hay a quien preguntar la edad");
 		}
 		
-		//QUEDA de ejercicio para que lo modifiquen
 
+		//QUEDA DE EJERCICIO PARA QUE QUE UDS LO MOFIQUEN
 	}
 
 }

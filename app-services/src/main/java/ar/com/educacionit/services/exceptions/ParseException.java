@@ -1,16 +1,15 @@
 package ar.com.educacionit.services.exceptions;
 
-import java.io.IOException;
-
 public class ParseException extends Exception {
-
-	public ParseException(String message) {
-		super(message);
-
-	}
-
-	public ParseException(String string, IOException e) {
-		super(string, e);
-	}
 	
+	private static final long serialVersionUID = -7990974953972333021L;
+
+	public ParseException(String msj) {
+		super(msj);
+	}
+
+	public ParseException(String msj, Throwable e) {
+		super(msj,e);
+	}
+
 }

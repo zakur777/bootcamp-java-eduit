@@ -21,10 +21,10 @@ public class AutoMain {
 		//recolector de basura
 		//garbage collector dentro de jvm
 		
-		//¿puedo matar un objeto?
+		//ï¿½puedo matar un objeto?
 		miAuto = null;
 		
-		//¿le puedo pedir algo mas?
+		//le puedo pedir algo mas?
 		//miAuto.encender();
 		
 		//revivo al objeto

@@ -27,7 +27,7 @@ public abstract class RestClientExecutor<T> {
 		WebTarget webTarget = this.buildWebTargert(client);//client.target("https://api.mercadolibre.com/").path("sites");
 		
 		//Invocation
-		Builder invocation = webTarget.request(MediaType.APPLICATION_JSON);
+		Invocation.Builder invocation = webTarget.request(MediaType.APPLICATION_JSON);
 		
 		//get
 		Response response = this.buidResponse(invocation);//invocation.get();

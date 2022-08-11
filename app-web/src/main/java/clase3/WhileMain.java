@@ -4,28 +4,32 @@ import java.util.Scanner;
 
 public class WhileMain {
 	
+	/**
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		
-		int contador = 0;
-		int numero;
+		int cont = 0;//f6
+		int numero;//la jvm no "para" en las 
+		//definiciones de variables
 		
-		Scanner scanner = new Scanner(System.in);
+		//decir a java que voy a leer desde el
+		//teclado
+		Scanner teclado = new Scanner(System.in);//f6
 		
-		System.out.println("Ingrese un numero");
+		System.out.println("Ingrese dato:");
 		
-		numero = scanner.nextInt();
+		numero = teclado.nextInt();//lee desde teclado
 		
-		while (numero != 0 && contador < 6) {
-			contador++;
-			System.out.println("Ingrese un numero");
+		while(numero !=0 && cont < 6) {
+			cont++;//f6
+			//ciclo infinito
 			
-			numero = scanner.nextInt();
-			
+			System.out.println("Ingrese dato:");
+			//vuelvo a leer el valor 
+			numero = teclado.nextInt();
 		}
-		scanner.close();
-		
 		System.out.println("fin");
-		
 	}
 
 }

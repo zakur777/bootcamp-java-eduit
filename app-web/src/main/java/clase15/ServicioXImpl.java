@@ -1,13 +1,25 @@
 package clase15;
 
-public class ServicioXImpl implements IGeneric {
+/**
+ * Servicio x se define para el TipoX: consume servicio url tal: 
+ * @author LopezCar
+ *
+ */
+public class ServicioXImpl implements IGeneric<TipoX> {
 
 	@Override
 	public TipoX parse() {
-		//consultamos una url www.sitio.com/api
+		
+		//consutamos una url www.sitio.com/api
+		
 		//respuesta con estructura x
+		
 		//convertir esa estructura a TipoX
+		
 		TipoX tx = new TipoX();
+		
+		///setea datos!!!
+		
 		return tx;
 	}
 

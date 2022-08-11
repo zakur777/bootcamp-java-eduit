@@ -17,5 +17,5 @@ public class Mamiferos extends Animal {
 		super.getEdad();
 	}
 	
-	//sus propias métodos
+	//sus propias metodos
 }

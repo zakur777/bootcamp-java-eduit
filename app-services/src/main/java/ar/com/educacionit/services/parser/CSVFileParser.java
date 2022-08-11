@@ -11,7 +11,7 @@ import java.util.List;
 import ar.com.educacionit.services.exceptions.ParseException;
 
 public class CSVFileParser implements IParser<Collection<Producto>>{
-	
+
 	private String filePath;
 	
 	//path
@@ -87,5 +87,5 @@ public class CSVFileParser implements IParser<Collection<Producto>>{
 		//aca puedo agregar logica sobre el path		
 		return filePath;
 	}	
-
+	
 }

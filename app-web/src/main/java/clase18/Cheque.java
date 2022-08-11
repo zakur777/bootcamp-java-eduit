@@ -54,14 +54,13 @@ public class Cheque implements Comparable<Cheque>{
 		return fechaPago;
 	}
 
+	public String getBanco() {
+		return this.banco;
+	}
+	
 	public String getCmc7() {
 		return cmc7;
 	}
-
-	public String getBanco() {
-		return banco;
-	}
-	
 	
 	
 	//alt+shift+s

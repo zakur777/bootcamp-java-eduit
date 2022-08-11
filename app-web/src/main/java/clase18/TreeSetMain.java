@@ -34,7 +34,7 @@ public class TreeSetMain {
 		
 		Cheque c1 = new Cheque("1002000","rio", cal.getTime());//ROOT
 		
-		cal.add(Calendar.DATE, 1);//+1 dia		
+		//cal.add(Calendar.DATE, 1);//+1 dia		
 		Cheque c2 = new Cheque("1002001","bbva",cal.getTime());//DER
 		
 		cal.add(Calendar.DATE, 1);//+1 dia		
@@ -43,10 +43,11 @@ public class TreeSetMain {
 		cal.add(Calendar.DATE, 1);//+1 dia
 		Cheque c4 = new Cheque("1002000","patagonia",cal.getTime());//IZQ
 		
-		Comparator<Cheque> comparator = new ComparadorDeCheques();
-				
 		//agrego un orden externo a la collection
-		Collection<Cheque> cheques = new TreeSet<>(comparator);
+		Comparator<Cheque> comparador = new ComparadorDeCheques();
+		
+		Collection<Cheque> cheques = new TreeSet<>(comparador);
+		
 		cheques.add(c1);
 		cheques.add(c2);
 		cheques.add(c3);

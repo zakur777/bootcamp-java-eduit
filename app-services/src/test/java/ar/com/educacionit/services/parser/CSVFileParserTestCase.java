@@ -1,6 +1,5 @@
 package ar.com.educacionit.services.parser;
 
-import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -19,24 +18,31 @@ public class CSVFileParserTestCase {
 			new CSVFileParser(null);
 		});
 	}
-	
+
 	@Test
 	public void when_blankfilename_then_throw_exception() {
 		assertThrows(IllegalArgumentException.class, () -> {
 			new CSVFileParser("");
 		});
 	}
-	
+
 	@Test
 	public void when_file_doesnot_exists_then_() {
 		assertThrows(ParseException.class, () -> {
 			new CSVFileParser("c:/bla/bla").parse();
-		}); 
+		});
 	}
-	
+
 	@Test
-	public void when_create_doesExist() {
-		assertNotNull(new CSVFileParser("c:/bla/bla"));
+	public void when_create_doesexist() {
+		assertNotNull(new CSVFileParser("C:/bla/bla"));
+	}
+
+	@Test
+	public void when_fileexists_then_verify_size() throws ParseException {
+		CSVFileParser parser = new CSVFileParser("C:\\desarrollo\\educationit\\bootcamp\\argentina\\archivo.csv");
+		Collection<Producto> list = parser.parse();
+		assertEquals(2,list.size());
 	}
 	
 	@Test

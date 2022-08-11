@@ -2,41 +2,62 @@ package clase17;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Iterator;
-
-
 
 public class CollectionMain {
 
 	public static void main(String[] args) {
+		//tipos de datos de java:
+		//char, int, .... String
+		//wrapper Intener, Long, Float....
 		
+		//vectores / array / arreglos
+		int [] edades = new int[2];
+		edades[0] = 1;
+		edades[edades.length-1] = 2; // ﾿?
 		
-		//crear una Collection
+		for(int edad : edades) {
+			System.out.println(edad);
+		}
+		
+		//estaticos
+		
+		//Java Collection Framework
+		// Collection<E> cualquier cosa
+		//  List<T>: Admite elemento duplicados
+		//     - ArrayList<T>
+		//	   - LinkedList<T>	
+		//  Set<U>: NO admite duplicados
+		//
+		// Map<K,V>: clave, valor
+		
+		//1- crear una Collection<String>
+		
 		Collection<String> nombres = new ArrayList<>();
 		
-		//agrego elementos
+		//2- agrego elementos 
 		nombres.add("brenda");
 		nombres.add("walter");
 		nombres.add("nicolas");
 		
-		//tamanio
-		//int tamanio = nombres.size();
+		//3- tama￱o 
+		int tamanio = nombres.size();
+		System.out.println("tama￱o: " + tamanio);
 		
-		//eliminar todos
-		//nombres.clear();
-		
-		//eliminar de manera segura
-		//Nos tenemos que conectar al iterador de la coleccion
-		Iterator<String> itNombres = nombres.iterator();
-		
-		while (itNombres.hasNext()) {
-			String nombreActual = itNombres.next();
-			System.out.println("Eliminando: " + nombreActual);
-			itNombres.remove();
+		//4- recorrer
+		for(String nombre : nombres) {
+			System.out.println(nombre);
 		}
 		
-		//determina si esta vacia la coleccion
-		boolean vacio = nombres.isEmpty();
+		//5- eliminar
+		nombres.remove("walter");
+		
+		//5.1 eliminar todos:
+		nombres.clear();
+		
+		
+		//tama￱o = 2
+		tamanio = nombres.size();
+		System.out.println("ahora: " + tamanio);
 	}
 
 }

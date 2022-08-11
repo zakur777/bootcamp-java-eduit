@@ -9,16 +9,15 @@ public class AccionMap {
 	
 	private static Map<Integer, IAccion> construirAcciones() {
 		Map<Integer, IAccion> mapAcciones = new HashMap<Integer, IAccion>();
-		
+		//cargo el mapa con las opciones
 		mapAcciones.put(1, new AccionAlta());
 		mapAcciones.put(2, new AccionBaja());
-		mapAcciones.put(3, new AccionModificar());
-		
+		mapAcciones.put(3, new AccionModificacion());
 		return mapAcciones;
 	}
 	
-	
 	public static IAccion getAccion(Integer op) {
+		
 		IAccion accion = new AccionDefault();
 		
 		if (mapAcciones.containsKey(op)) {
@@ -26,8 +25,6 @@ public class AccionMap {
 		}
 		
 		return accion;
-		
 	}
-
 
 }

@@ -9,7 +9,7 @@ public class CreadorDeVoladores {
 		Ovni o = new Ovni();
 		
 		//??
-		//de qué tipo?
+		//de que tipo?
 		return new Volador[]{avion,h1,s,o};
 	}
 

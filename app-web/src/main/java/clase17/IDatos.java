@@ -4,8 +4,6 @@ import java.util.Collection;
 
 public interface IDatos<T> {
 
-	public T buscar();
-
+	public T buscarPorId();
 	public Collection<T> buscarTodos();
-
 }

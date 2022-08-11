@@ -1,11 +1,9 @@
 package clase19;
 
 public class Context {
-	
 	private String id;
 	private Long edad;
 	private Float monto;
-	
 	public String getId() {
 		return id;
 	}
@@ -24,7 +22,6 @@ public class Context {
 	public void setMonto(Float monto) {
 		this.monto = monto;
 	}
-	
 	
 	
 }

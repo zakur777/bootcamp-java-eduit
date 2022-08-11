@@ -7,72 +7,60 @@ public class MainLog {
 	public static void main(String[] args) {
 		
 		Scanner teclado = new Scanner(System.in);
-		String op = "1";//fs 2; email
+		String op = "2";//fs 2; email
 		String msj = "mensaje a enviar";
 		
 		System.out.println("Ingrese cantidad de log");
-		
 		int cantidad = teclado.nextInt();
 		
+		// Padre p = new Hijo();
 		Log[] log = new Log[cantidad];
 		
-
-		for(int i=0; i<log.length; i++) {
+		for(int i=0;i<log.length;i++) {
 			System.out.println("1- FS, 2 - Email");
 			op = teclado.next();
+			//1, 2 
 			
 			Log aux = getLog(op);
-			//aux.idLong = 100l;
+			// aux.id = 100l;
+			aux.setMsj(msj);//por polimorfismo se ejecuta el setter sin problemas
+			//porque al ser publico en el padre, los hijos lo heredan
 			
-			aux.setMsj(msj);
-			log[i] = aux;
-			
-			/*
-			if(op.equals("1")) {
-				log[i] = new FSLog(msj);
-			}else if(op.equals("2")) {
-				log[i] = new EmailLog(msj);
-			} else {
-				log[i] = new DefaultLog(msj);
-			}
-			*/
+			log[i] = aux;			
 		}
 		
-		for (Log _log : log) {
-			
+		// ahora que tengo todo el array cargado
+		// lo recorro y voy invocando el metodo loguear()
+		// y por polimorfismo se determina cual de las instancias
+		for(Log _log : log) {
 			_log.loguear();
-			
-			if (_log instanceof IEjecutable) {
+			if(_log instanceof IEjecutable) {
 				IEjecutable iinterface = (IEjecutable)_log;
 				iinterface.ejecutar();
 			}
-			
-			if (_log instanceof ISaludable) {
+			if(_log instanceof ISaludable) {
 				ISaludable iinterface = (ISaludable)_log;
 				iinterface.saludar();
 			}
 		}
 		
 		teclado.close();
-		
 	}
-	
+
 	public static Log getLog(String op) {
+		//Padre p = new Hijo()
 		Log log;
-		
-		switch (op) {
+		switch (op) {//> 7 
 		case "1":
-			log = new FSLog();
-			break;
+				log = new FSLog();		
+				break;	
 		case "2":
-			log = new EmailLog();
+				log = new EmailLog();		
 			break;
 		default:
 			log = new DefaultLog();
 			break;
 		}
-		
 		return log;
 	}
-
 }

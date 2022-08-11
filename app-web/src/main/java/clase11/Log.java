@@ -3,13 +3,14 @@ package clase11;
 public abstract class Log {
 
 	private String msj;
-	public final Long idLong = 1l;
-	protected static int cont = 0; // no le pertenece a ninguna instancia si no a la clase log
-
+	private final Long id = 1l;//genero una constante
+	protected static int cont = 0; //no le pertenece a ninguna instancia en particular,sino a la clase Log
+	
+	//solo lo podria asignar en el contructor 
 	public Log() {
 		
 	}
-
+	
 	public Log(String msj) {
 		this.msj = msj;
 	}
@@ -29,5 +30,8 @@ public abstract class Log {
 	public void setMsj(String msj) {
 		this.msj = msj;
 	}
-	
+
+	public Long getId() {
+		return this.id;
+	}
 }

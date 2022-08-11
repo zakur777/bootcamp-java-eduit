@@ -7,34 +7,48 @@ import clase7.Articulo;
 
 public class MainMap {
 
+	/**
+	 * El usuario ingresa una opcion
+	 * 1- alta
+	 * 2- baja
+	 * 3- modificar
+	 * 4- listar
+	 * @param args
+	 */
 	public static void main(String[] args) {
-		Integer opcion = 1;
 		
-		IAccion accion = AccionMap.getAccion(opcion);
+		Integer opcionIngresadaPorUsuario = 1;
+		
+		// Interface i = new ClaseQueImplementaLaInterface();		
+		IAccion accion = AccionMap.getAccion(opcionIngresadaPorUsuario);//AltaAccion|BajaAccion|AccionDefault
 		
 		Articulo articulo = contruirArticulo();
 		
-		InMemoryDb.listAll();
+		//ejecuto
+		InMemoryDB.listAll();
 		
 		accion.exec(articulo);
 		
-		InMemoryDb.listAll();
+		InMemoryDB.listAll();
 		
-		
+		InMemoryDB.delete(articulo.getId());
 
+		InMemoryDB.listAll();
 	}
 
 	private static Articulo contruirArticulo() {
 		Scanner teclado = new Scanner(System.in);
-		Articulo articulo = new Libro();
+		Articulo art = new Libro();
 		System.out.println("Ingrese titulo");
-		articulo.setAutor(teclado.next());
+		art.setAutor(teclado.next());
 		System.out.println("Ingrese id");
-		articulo.setId(teclado.nextLong());
+		art.setId(teclado.nextLong());
+		
+		//downcating
+		System.out.println("Ingrese isbn");
+		((Libro)art).setIsbn(teclado.next());
 		//completar los demas datos
 		teclado.close();
-		return articulo;
-		
+		return art;
 	}
-
 }

@@ -1,7 +1,6 @@
 package clase17;
 
 import java.util.LinkedList;
-import java.util.List;
 
 public class LinkedListMain {
 
@@ -14,13 +13,14 @@ public class LinkedListMain {
 		nombres.add("jose");
 		nombres.add("maria");
 		
+		// Vector<String> vector = new Vector<>();
+		
 		nombres.addFirst("antes de carlos");
 		nombres.addLast("despues de maria");
 		
+		//recorro el linkedlist
 		for (String nombre : nombres) {
 			System.out.println(nombre);
 		}
-
 	}
-
 }

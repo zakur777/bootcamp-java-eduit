@@ -6,7 +6,7 @@ public class ConsolaMain {
 		
 		Consola consola = new Consola("generica", "china", 2022);
 		
-		// ¿play?
+		// play?
 		// xbox?
 		
 		PlayStation play = new PlayStation("play", "sony", 2022, "abc12345");

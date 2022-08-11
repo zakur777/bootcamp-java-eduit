@@ -1,7 +1,7 @@
 package ar.com.educacionit.services;
 
-import ar.com.educacionit.domain.Socio;
+import ar.com.educacionit.domain.Socios;
 
-public interface SociosService extends GenericService<Socio>{
+public interface SociosService extends GenericService<Socios>{
 	
 }

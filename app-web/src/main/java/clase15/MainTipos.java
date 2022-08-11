@@ -6,14 +6,15 @@ public class MainTipos {
 		
 			String tipo = "x";
 			
+		
 			if ("x".equals(tipo)) {
 				ServicioXImpl servicio = new ServicioXImpl();
 				servicio.parse();
 			} else {
 				ServicioYImpl servicio = new ServicioYImpl();
 				servicio.parse();
-				
 			}
+
 	}
 
 }

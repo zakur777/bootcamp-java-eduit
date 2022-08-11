@@ -4,43 +4,43 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import ar.com.educacionit.daos.SocioDao;
-import ar.com.educacionit.domain.Socio;
+import ar.com.educacionit.daos.SociosDao;
+import ar.com.educacionit.domain.Socios;
 
-public class SocioDaoMysqlImpl extends JDBCBaseDao<Socio> implements SocioDao {
+public class SociosDaoMysqlImpl extends JDBCBaseDao<Socios> implements SociosDao {
 
-	public SocioDaoMysqlImpl() {
-		super("Socio");
+	public SociosDaoMysqlImpl() {
+		super("socios");
 	}
-
+	
 	@Override
 	public String getSaveSQL() {
 		return "(APELLIDO,NOMBRE, CODIGO) VALUES (?,?,?)";
 	}
 
 	@Override
-	public void saveData(Socio entity, PreparedStatement st) throws SQLException {
+	public void saveData(Socios entity, PreparedStatement st) throws SQLException {
 		st.setString(1, entity.getApellido());
 		st.setString(2, entity.getNombre());
 		st.setString(3, entity.getCodigo());
 	}
-
-	public Socio fromResultSetToEntity(ResultSet rs) throws SQLException {
+	
+	public Socios fromResultSetToEntity(ResultSet rs) throws SQLException {
 		Long id = rs.getLong("id");
 		String apellido = rs.getString("apellido");
 		String nombre = rs.getString("nombre");
 		String codigo = rs.getString("codigo");
-		return new Socio(id, apellido, nombre, codigo);
+		return new Socios(id,apellido, nombre, codigo);
+	}
+
+
+	@Override
+	public void updateData(Socios entity, PreparedStatement st) throws SQLException {
+		
 	}
 
 	@Override
-	public void updateData(Socio entity, PreparedStatement st) throws SQLException {
-
-	}
-
-	@Override
-	public String getUpdateSQL(Socio entity) {
+	public String getUpdateSQL(Socios entity) {
 		return "";
 	}
-
 }

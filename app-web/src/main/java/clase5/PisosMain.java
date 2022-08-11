@@ -5,44 +5,37 @@ import java.util.Scanner;
 public class PisosMain {
 
 	public static void main(String[] args) {
-		/*
-		 * Construir un edificio del tamaño que indique el usuario
+		
+		//int[] aux = new int[1];//0 por el tipo int  > 0		
+		//System.out.println(aux);//como es un array, muestra la posicion de memoria 
+		
+		//String miNombre = "carlos";
+		
+		/**
+		 * Construir un edificio de tama￱o indicado por el usuario.
 		 */
+		Scanner teclado = new Scanner(System.in);
+		System.out.println("Ingrese el tama￱o");
+		int tamanio = teclado.nextInt();
 		
-		Scanner scanner = new Scanner(System.in);
-		System.out.println("Ingrese el tamaño");
-		int tamanio = scanner.nextInt();
-		
-		//Construyo el edificio
+		//construyo el edificio
 		String[] edificio = new String[tamanio];
 		
-		/*
-		 * Mostrar el tamaño del edificio
-		 */
-		
-		/*
-		 * Cargamos las personas
-		 */
-		
-		for (int i = 0; i < edificio.length; i++) {
-			edificio[i] = "persona-" + i; 
-		}
-		
-		
-		System.out.println("Tamaño del edificio " + edificio.length);
-		
-		/*
-		 * Como recorrer un array
-		 */
-		
-		for (int i = 0; i < edificio.length; i++) {
-			String fulano = edificio[i];
+		//mostrar el tama￱o, pero usando el edificio, no la variable
+		System.out.println(edificio.length);
 			
-			System.out.println(fulano + " vive en el piso " + i);
+		//cargamos los nombres de las personas que viven en el edificio
+		for(int piso = 0; piso < edificio.length; piso++) {
+			edificio[piso] = "persona-"+piso;
 		}
 		
+		//como recorrer un array (de cualquier tipo)
 		
-
+		for(int piso = 0; piso < edificio.length; piso++) {
+			String fulano = edificio[piso]; //estoy en un piso que dice la variable piso
+			//quiero mostar su nombre y el piso
+			System.out.println(fulano + " vive en el piso" + piso );
+		}
 	}
 
 }

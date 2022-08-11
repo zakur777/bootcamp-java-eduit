@@ -8,10 +8,18 @@ import java.util.Set;
 public class MapMain {
 
 	public static void main(String[] args) {
-		// asociar los dias de la semana
+		/*
+		 *Asociar los dias de la semana 
+		 *1 - lunes
+		 *2 - martes
+		 *3 - miercoles
+		 *......
+		 * */
 
+		//usamos Map>HashMap
 		Map<Integer, String> mapSemana = new HashMap<>();
 
+		//cargar un valor al mapa
 		mapSemana.put(1, "Lunes");
 		mapSemana.put(2, "Martes");
 		mapSemana.put(3, "Miercoles");
@@ -20,26 +28,27 @@ public class MapMain {
 		mapSemana.put(6, "Sabado");
 		mapSemana.put(7, "Domingo");
 
-		System.out.println(mapSemana);
+		System.out.println(mapSemana);//toString() ya esta implementado
 
+		//determinar si existe una clave dentro del mapa
 		boolean existe = mapSemana.containsKey(6);
 		
 		System.out.println("El sabado " + existe);
-		
 		existe = mapSemana.containsKey(8);
-		
 		System.out.println("El dia 8 " + existe);
 		
 		//eliminar una clave-valor
-		String value = mapSemana.remove(3);
+		
+		String value = mapSemana.remove(3);//quitar del mapa 3-Miercoles
 		System.out.println(mapSemana);
 		
 		//vaciar el mapa
 		//mapSemana.clear();
 		
-		//la clave debe ser unica
-		mapSemana.put(5, "VALOR NUEVO");
+		//System.out.println(mapSemana);
 		
+		//la calve debe ser unica
+		mapSemana.put(5, "VALOR NUEVO");
 		System.out.println(mapSemana);
 		
 		mapSemana.replace(6, "SATURDAY");
@@ -49,15 +58,18 @@ public class MapMain {
 		Set<Integer> keys = mapSemana.keySet();
 		System.out.println("claves del mapa: " + keys);
 		
-		//Obtengo los valores del mapa
+		//obtengo los valores del mapa
 		Collection<String> values = mapSemana.values();
-		System.out.println("Valores del mapa: " + keys);
+		System.out.println("valores del mapa: " + keys);
 		
 		//recorrer el mapa usando sus claves
 		for (Integer oneKey : keys) {
 			String oneValue = mapSemana.get(oneKey);
-			System.out.println("Key: " + oneKey + "value : " + oneValue);
+			System.out.println("key: " + oneKey + " value: " +oneValue);
+			// mapSemana.put(oneKey*10, value + "-"+ oneKey);
 		}
+		
+		System.out.println(mapSemana);
 		
 		//recorrido por valores
 		for(String oneValue : values) {
@@ -65,7 +77,6 @@ public class MapMain {
 		}
 		
 		//Map.Entry<K,V>
-		//para recorrer
 		Set<Map.Entry<Integer, String>> entrySet = mapSemana.entrySet();
 		
 		//recorrer las entradas de un mapa usando Entry
@@ -76,9 +87,6 @@ public class MapMain {
 			System.out.println(oneKey + " - " + oneValue);
 		}
 		
-		
-		
-
 	}
 
 }

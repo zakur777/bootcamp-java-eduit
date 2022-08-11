@@ -7,5 +7,5 @@ public class Oviparos {
 	
 	//nacen de una manera particular
 		
-	//sus propias métodos
+	//sus propias metodos
 }

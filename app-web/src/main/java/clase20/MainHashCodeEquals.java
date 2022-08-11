@@ -24,6 +24,8 @@ public class MainHashCodeEquals {
 		} else {
 			System.out.println("no iguales");
 		}
+		
+		//hibernate 
 	}
 
 }

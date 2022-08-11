@@ -6,8 +6,9 @@ public class AccionAlta implements IAccion{
 
 	@Override
 	public void exec(Articulo ctx) {
-		InMemoryDb.save(ctx.getId(), ctx);
 		
+		//usa la base de datos en memoria
+		InMemoryDB.save(ctx.getId(), ctx);
 	}
 
 }

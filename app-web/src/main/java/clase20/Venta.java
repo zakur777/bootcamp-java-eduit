@@ -3,6 +3,7 @@ package clase20;
 import java.util.Date;
 import java.util.Objects;
 
+//clase inmutable
 public class Venta {
 
 	private Long idVendedor;
@@ -29,17 +30,12 @@ public class Venta {
 		return monto;
 	}
 
-	public Long getIdVendedor() {
-		return idVendedor;
-	}
-
 	public void setIdVendedor(Long idVendedor) {
 		this.idVendedor = idVendedor;
 	}
 
-	@Override
-	public String toString() {
-		return "Venta [idVendedor=" + idVendedor + ", fecha=" + fecha + ", monto=" + monto + "]";
+	public Long getIdVendedor() {
+		return idVendedor;
 	}
 
 	@Override
@@ -59,4 +55,9 @@ public class Venta {
 		return this.idVendedor.equals(other.getIdVendedor());
 	}
 
+	
+	//lase20.Venta@2d6eabae hashCode por defecto
+	
+	//hashCode|equals
+	
 }

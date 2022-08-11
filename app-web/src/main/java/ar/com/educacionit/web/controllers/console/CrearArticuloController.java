@@ -1,11 +1,11 @@
 package ar.com.educacionit.web.controllers.console;
 
+import java.util.Scanner;
+
 import ar.com.educacionit.domain.Articulo;
 import ar.com.educacionit.services.ArticulosService;
 import ar.com.educacionit.services.exceptions.ServiceException;
-import ar.com.educacionit.services.impl.ArticuloServiceImpl;
-
-import java.util.Scanner;
+import ar.com.educacionit.services.impl.ArticulosServiceImpl;
 
 public class CrearArticuloController {
 
@@ -43,7 +43,7 @@ public class CrearArticuloController {
 		
 		//insertarlo en la db??
 		
-		ArticulosService articuloService = new ArticuloServiceImpl();
+		ArticulosService articuloService = new ArticulosServiceImpl();
 
 		try {
 			

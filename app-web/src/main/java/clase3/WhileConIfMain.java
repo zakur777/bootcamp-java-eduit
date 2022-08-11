@@ -39,8 +39,6 @@ public class WhileConIfMain {
 			//ctrl+d
 		}
 		
-		teclado.close();
-		
 		System.out.println("fin");
 	}
 

@@ -20,8 +20,8 @@ public class Animal {
 	}
 	
 	//getter: obtengo el valor de un atributo
-	//no tiene parámetros
-	//firma del método
+	//no tiene parametros
+	//firma del metodo
 	public String getColor() {
 		//variable local
 		String color;

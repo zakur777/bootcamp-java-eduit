@@ -20,11 +20,10 @@ public class CollectionEliminarDuplicados {
 		nombres.add("maria");
 		
 		System.out.println(nombres);
+		//Object.toString() > Collection @override
 		
 		//quiero eliminar los elementos duplicados
-		
 		nombres = new HashSet<>(nombres);
-		
 		System.out.println(nombres);
 		
 		nombres = new ArrayList<>(nombres);
@@ -33,39 +32,36 @@ public class CollectionEliminarDuplicados {
 		boolean estaPepe = nombres.contains("maria");
 		System.out.println(estaPepe);
 		
-		Collection<String> apellidos = new HashSet<>();
+		Collection<String> apellidos = new HashSet<>();//no importa el orden
 
 		apellidos.add("matias");
 		apellidos.add("brenda");
 		apellidos.add("giuliana");
 
-		//combinar dos listas en una
-		Collection<String> apellidosYnombre = new ArrayList<>();
 		
-		apellidosYnombre.addAll(nombres);
-		apellidosYnombre.addAll(apellidos);
+		//combino dos listas en una
+		Collection<String> apyn = new ArrayList<>();
+		apyn.addAll(nombres);
+		apyn.addAll(apellidos);
 		
-		System.out.println(apellidosYnombre);
+		System.out.println(apyn);
 		
 		Set<String> personas = new HashSet<>();
-		apellidos.add("giuliana");
-		nombres.add("maria");
+		personas.add("giuliana");
+		personas.add("maria");
 		
 		Set<String> personas2 = new HashSet<>();
-		apellidos.add("giuliana");
-		nombres.add("maria");
+		personas2.add("maria");
+		personas2.add("giuliana");
 		
-		boolean estan = apellidosYnombre.containsAll(personas);
-		
+		boolean estan  = apyn.containsAll(personas);
 		System.out.println("estan? " + estan);
 		
 		boolean iguales = personas.equals(personas);
 		boolean iguales2 = personas.equals(personas2);
 		
 		System.out.println("iguales? " + iguales);
-		System.out.println("iguales2? " + iguales);
-		
+		System.out.println("iguales2?"+iguales2);
 
 	}
-
 }

@@ -175,3 +175,6 @@ fabric.properties
 .idea/misc.xml
 .idea/vcs.xml
 .idea/webContexts.xml
+
+#Archivo Mac
+/.DS_Store

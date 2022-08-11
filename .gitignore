@@ -89,6 +89,18 @@ local.properties
 
 # Codepro
 .codepro/
+
+#Node
+node_modules
+/node_modules-/
+/package-lock.json
+
+/node.exe
+/npm
+/npm.cmd
+/node/
+
+#Mac
 /.DS_Store
 
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider

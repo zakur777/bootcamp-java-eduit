@@ -27,5 +27,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/x
   	<module>app-services</module>
   	<module>app-daos</module>
   	<module>app-domain</module>
-  </modules>
+  <module>react-webapp</module>
+	
+</modules>
 </project>

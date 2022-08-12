@@ -50,8 +50,11 @@ public class FiltroMain {
 		edadesString = edades
 					.stream()
 					.filter(edad -> edad > 55 && edad < 150)
-					.map(edad -> "EDAD:" + edad)
+			.map(edad -> "EDAD:" + edad)//define el tipo de dato de salida
 					.collect(Collectors.toList());
+		
+		
+		System.out.println(edadesFiltradas);
 		System.out.println(edadesString);
 	}
 

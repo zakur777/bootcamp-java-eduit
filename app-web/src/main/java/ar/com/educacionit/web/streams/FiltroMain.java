@@ -47,14 +47,11 @@ public class FiltroMain {
 		System.out.println(edadesFiltradas);
 		
 		// > 55 < 150
-		edadesString = edades	
-			.stream()
-			.filter(edad -> edad > 55 && edad < 150)
-			.map(edad -> "EDAD:" + edad)//define el tipo de dato de salida
-			.collect(Collectors.toList());
-		
-		
-		System.out.println(edadesFiltradas);
+		edadesString = edades
+					.stream()
+					.filter(edad -> edad > 55 && edad < 150)
+					.map(edad -> "EDAD:" + edad)
+					.collect(Collectors.toList());
 		System.out.println(edadesString);
 	}
 

@@ -45,6 +45,7 @@
 	    				</a>
 	    			</div>  	
 		     	</div>
+			</section>
 	     </div>
 	    </main>
 	</body>

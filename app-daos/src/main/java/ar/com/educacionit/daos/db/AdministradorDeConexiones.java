@@ -10,11 +10,11 @@ public class AdministradorDeConexiones {
 	
 	public static Connection obtenerConexion() throws GenericException {
 		
-		String host = "localhost";
-		String user = "root";
-		String password ="34Admin12";
-		String dbName = "bootcam-java-educacionit";
-		String driverName = "com.mysql.cj.jdbc.Driver";
+		String host = System.getenv("HOST");
+		String user = System.getenv("USERS");
+		String password =System.getenv("PASSWORD");
+		String dbName = System.getenv("DB_NAME");
+		String driverName = System.getenv("DRIVER_NAME");;
 		String url = "jdbc:mysql://"+host+"/"+dbName+"?serverTimeZone=UTC&userSSL=false";
 		
 		//crecion de la clase que pertenece al "jar" mysql-connector

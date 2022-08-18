@@ -19,7 +19,7 @@
 	    <version>8.0.29</version>
 	</dependency>
 
-	  <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
 	  <dependency>
 		  <groupId>org.postgresql</groupId>
 		  <artifactId>postgresql</artifactId>
@@ -27,7 +27,7 @@
 	  </dependency>
 
 
-	  <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
 	
 <dependency>
 			<groupId>org.junit.jupiter</groupId>

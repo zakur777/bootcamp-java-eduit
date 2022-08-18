@@ -189,3 +189,70 @@ insert into paises (descripcion, descripcion_corta,habilitada) values('ARGENTINA
 INSERT INTO roles(role) VALUES('ADMIN');
 INSERT INTO roles(role) VALUES('USER');
 INSERT INTO users_roles(USERS_ID,ROLES_ID) VALUES(1,1);
+
+
+
+
+
+--nuevo
+
+CREATE TABLE producto (
+	id INT(10) NOT NULL AUTO_INCREMENT,
+	nombre VARCHAR(50) NOT NULL,
+	precio FLOAT NOT NULL,
+	fecha_creacion DATE NOT NULL,
+	imagen VARCHAR(100) NULL DEFAULT NULL,
+	codigo VARCHAR(7) NOT NULL,
+	PRIMARY KEY (id),
+	UNIQUE INDEX codigo (codigo)
+)
+
+/*crud*/
+INSERT INTO producto (nombre, precio,fecha_creacion,imagen,codigo) 
+VALUES('mate listo',1500, CURDATE(),'','0001')
+
+select * FROM producto 
+
+UPDATE producto SET precio = precio * 1.1
+
+DELETE FROM producto WHERE id = 1
+
+
+
+
+
+
+
+
+
+
+
+
+SELECT * from producto
+
+
+select * FROM categorias
+
+
+SELECT * FROM productos where id =  1
+SELECT * FROM productos where codigo =  'CODIGO'
+
+> GET > id como parametro
+  GET > codigo como parametro
+
+
+CREATE TABLE producto (
+	id SERIAL NOT NULL,
+	nombre VARCHAR(50) NOT NULL,
+	precio FLOAT NOT NULL,
+	fecha_creacion DATE NOT NULL,
+	imagen VARCHAR(100) NULL DEFAULT NULL,
+	codigo VARCHAR(7) NOT NULL,
+	PRIMARY KEY (id)
+);
+ALTER TABLE producto ADD CONSTRAINT UN_producto_codigo unique (codigo);
+
+
+
+
+UPDATE PRODUCTO set nombre='cupon despedida',precio='35.0'WHERE codigo = 'null'

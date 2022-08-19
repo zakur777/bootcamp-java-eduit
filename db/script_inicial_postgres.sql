@@ -255,4 +255,14 @@ ALTER TABLE producto ADD CONSTRAINT UN_producto_codigo unique (codigo);
 
 
 
-UPDATE PRODUCTO set nombre='cupon despedida',precio='35.0'WHERE codigo = 'null'
+UPDATE PRODUCTO set nombre='cupon despedida',precio='35.0'WHERE codigo = 'null';
+
+--MELI
+CREATE TABLE meli_site (
+                           id SERIAL PRIMARY KEY NOT NULL,
+                           codigo VARCHAR(4) NOT NULL,
+                           NAME VARCHAR(100) NOT NULL
+);
+
+ALTER TABLE meli_site ADD CONSTRAINT UN_meli_site UNIQUE (codigo);
+

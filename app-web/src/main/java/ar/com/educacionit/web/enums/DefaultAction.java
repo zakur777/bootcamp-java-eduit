@@ -8,6 +8,6 @@ public class DefaultAction implements IExportable {
 	@Override
 	public String exportar(Collection<Serializable> datos) {
 		// TODO Auto-generated method stub
-		return null;
+		return "";
 	}
 }

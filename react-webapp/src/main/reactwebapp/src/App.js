@@ -7,7 +7,7 @@ function App() {
   // console.log(styles);
 
   return (
-    <BrowserRouter basename='/apreact-webapp-1.0.0-SNAPSHOT'>
+    <BrowserRouter basename='/'>
       <header>
         <Link to={'/'}>
           <div>

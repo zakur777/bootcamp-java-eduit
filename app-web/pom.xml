@@ -1,8 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>ar.com.educacionit</groupId>
@@ -14,7 +14,7 @@
     <name>modulo web del bootcamp</name>
 
 
-    <dependencies>
+<dependencies>
         <dependency>
             <groupId>ar.com.educacionit</groupId>
             <artifactId>app-services</artifactId>
@@ -22,7 +22,7 @@
         </dependency>
 
 
-        <!-- servlet+jsp TOMCAT 10-->
+<!-- servlet+jsp TOMCAT 10-->
         <!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api
               <dependency> <groupId>jakarta.servlet</groupId> <artifactId>jakarta.servlet-api</artifactId>
               <version>5.0.0</version> <scope>provided</scope> </dependency> -->
@@ -37,7 +37,7 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/javax.servlet.jsp/javax.servlet.jsp-api -->
+<!-- https://mvnrepository.com/artifact/javax.servlet.jsp/javax.servlet.jsp-api -->
         <dependency>
             <groupId>javax.servlet.jsp</groupId>
             <artifactId>javax.servlet.jsp-api</artifactId>
@@ -47,30 +47,29 @@
 
         <!-- https://mvnrepository.com/artifact/org.glassfish.jersey.core/jersey-client -->
 
-        <dependency>
+<dependency>
             <groupId>org.glassfish.jersey.core</groupId>
             <artifactId>jersey-client</artifactId>
             <version>2.25.1</version>
         </dependency>
 
 
-		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations -->
-        <dependency>
+<dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-annotations</artifactId>
+            <artifactId>jackson-databind
+</artifactId>
             <version>2.5.4</version>
         </dependency>
 
-		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-databind</artifactId>
+			<artifactId>jackson-annotations
+</artifactId>
 			<version>2.5.4</version>
 		</dependency>
 
 
-
-		<!-- https://mvnrepository.com/artifact/org.glassfish.jersey.media/jersey-media-json-jackson -->
+<!-- https://mvnrepository.com/artifact/org.glassfish.jersey.media/jersey-media-json-jackson -->
 		<dependency>
 			<groupId>org.glassfish.jersey.media</groupId>
 			<artifactId>jersey-media-json-jackson</artifactId>
@@ -78,7 +77,7 @@
 		</dependency>
 
 
-		<dependency>
+<dependency>
             <groupId>javax.activation</groupId>
             <artifactId>javax.activation-api</artifactId>
             <version>1.2.0</version>
@@ -128,9 +127,7 @@
 		</dependency>
 
 
-
-
-	</dependencies>
+</dependencies>
 
     <build>
         <finalName>app-web</finalName>
